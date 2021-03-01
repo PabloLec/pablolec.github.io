@@ -29,7 +29,6 @@ url: https://pablolec.github.io
 baseurl: https://pablolec.github.io
 
 permalink: pretty
-relative_permalinks: true
 
 # The release of Jekyll Now that you're using
 version: v1.2.0
