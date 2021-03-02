@@ -4,7 +4,6 @@ published: true
 {:refdef: style="text-align: center;"}
 ![demo](https://raw.githubusercontent.com/PabloLec/recoverpy/main/docs/assets/demo.gif)
 {: refdef}
-* * *
 
 Hi ! :grinning:
 
