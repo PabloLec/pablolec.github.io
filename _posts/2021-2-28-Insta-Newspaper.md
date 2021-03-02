@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: Insta Newspaper
-category: Repository
+subtitle: Tiny bot scraping old newspapers front pages and posting it on Instagram.
 tags: repository scraping selenium
 ---
 {:refdef: style="text-align: center;"}

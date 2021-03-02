@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: Recoverpy
-category: Repository
+subtitle: Python 3 utility to retrieve overwritten or deleted data. My first clean repo <3
 tags: repository utility
 ---
 
