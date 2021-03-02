@@ -71,4 +71,4 @@ recover a text file larger than one partition block.
 
 - The UI faces some bugs regarding mouse integration. It possibly has more to do with py_cui than my poor implementation of it. I will try to push some fixes on py_cui repo.
 - Thereupon, py_cui will continue to evolve. My next action on recoverpy will certainly be a more complete usage of py_cui capabilities.
-- My handling of multi threading and multi processing may be improved to speed up the search. I've managed to work with the GIL and obtain acceptable performances. Still, I will try to improve it if I receive pertinent feedback.
+- My handling of multi-threading and multi-processing may be improved to speed up the search. I've managed to work with the GIL and obtain acceptable performances. Still, I will try to improve it if I receive pertinent feedback.
