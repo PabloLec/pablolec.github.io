@@ -20,7 +20,7 @@ I try to be a back-up kind of guy. For this Raspberry, the `/home/` folder gets 
 
 :mask: Oops.
 
-There are a lot of utilities/ways to retrieve deleted files but when the file still exists, only its content is overwritten, the solution was well hidden.
+There are a lot of utilities/ways to retrieve deleted files but to get an existing file content back, the solution was well hidden.
 After a few hours of despair, this kind of occasion where you feel like the only fool to search your queries, I eventually found what I was looking for.
 
 
