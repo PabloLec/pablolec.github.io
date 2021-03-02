@@ -1,6 +1,11 @@
 ---
 published: true
+layout: post
+title: Recoverpy
+category: Repository
+tags: [repository, utility]
 ---
+
 {:refdef: style="text-align: center;"}
 ![demo](https://raw.githubusercontent.com/PabloLec/recoverpy/main/docs/assets/demo.gif)
 {: refdef}
