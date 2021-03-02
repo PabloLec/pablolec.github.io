@@ -5,6 +5,9 @@ published: true
 ![demo](https://raw.githubusercontent.com/PabloLec/recoverpy/main/docs/assets/demo.gif)
 {: refdef}
 
+<!--more-->
+<hr>
+
 Hi ! :grinning:
 
 I finally pushed my first attempt to make a decent repo.
