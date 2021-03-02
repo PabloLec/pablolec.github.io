@@ -3,7 +3,7 @@ published: true
 layout: post
 title: Recoverpy
 category: Repository
-tags: [repository, utility]
+tags: repository utility
 ---
 
 {:refdef: style="text-align: center;"}

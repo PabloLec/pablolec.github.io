@@ -3,7 +3,7 @@ published: true
 layout: post
 title: Insta Newspaper
 category: Repository
-tags: [repository, scraping, selenium]
+tags: repository scraping selenium
 ---
 {:refdef: style="text-align: center;"}
 ![demo](https://raw.githubusercontent.com/PabloLec/insta_newspaper/main/docs/assets/demo.gif)
