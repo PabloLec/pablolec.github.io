@@ -1,7 +1,7 @@
 ---
 published: true
 ---
-![demo](https://raw.githubusercontent.com/PabloLec/recoverpy/main/docs/assets/demo.gif)
+![demo](https://raw.githubusercontent.com/PabloLec/recoverpy/main/docs/assets/demo.gif){: .center-image }
 * * *
 
 Hi ! :grinning:
@@ -12,12 +12,14 @@ The idea bloomed a few weeks ago when I had to face a feared situation. Data los
 
 I had freshly installed Ubuntu ARM64 to replace 32-bits Raspbian on a Raspberry PI 4. I preserved /home/ folder, but I had to give some adjustments to various homemade scripts.
 
-I try to be a back-up kind of guy. For this Raspberry, the /home/ folder gets tarballed and stored in Google Drive daily. This time, that didn’t do the trick. I was probably 200 lines deep, 2 hours in modifying my obscure script. My misery came from typing a ‘>‘ instead of a pipe in the console. My beloved script was gone, overwritten.
+I try to be a back-up kind of guy. For this Raspberry, the /home/ folder gets tarballed and stored in Google Drive daily. This time, that didn’t do the trick. I was probably 200 lines deep, 2 hours in modifying my obscure script. My misery came from typing a `>` instead of a pipe in the console. My beloved script was gone, overwritten.
 
 Oops.
 
 There are a lot of utilities/ways to retrieve deleted files but when the file still exists, only its content is overwritten, the solution was well hidden.
 After a few hours of despair, this kind of occasion where you feel like the only fool to search your queries, I eventually found what I was looking for.
+
+
 
 To find a file matching our pattern:
 
