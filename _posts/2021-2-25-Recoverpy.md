@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## ![Demo]({{site.baseurl}}/https://raw.githubusercontent.com/PabloLec/recoverpy/main/docs/assets/demo.gif)
 
