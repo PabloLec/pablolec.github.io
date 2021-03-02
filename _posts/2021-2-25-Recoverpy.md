@@ -18,7 +18,7 @@ I had freshly installed Ubuntu ARM64 to replace 32-bits Raspbian on a Raspberry 
 
 I try to be a back-up kind of guy. For this Raspberry, the `/home/` folder gets tarballed and stored in Google Drive daily. This time, that didn’t do the trick. I was probably 200 lines deep, 2 hours in modifying my obscure script. My misery came from typing a `>` instead of a pipe in the console. My beloved script was gone, overwritten.
 
-Oops.
+:mask: Oops.
 
 There are a lot of utilities/ways to retrieve deleted files but when the file still exists, only its content is overwritten, the solution was well hidden.
 After a few hours of despair, this kind of occasion where you feel like the only fool to search your queries, I eventually found what I was looking for.
@@ -64,3 +64,11 @@ So here it is, my little data recovery utility and its console-based UI.
 The utility wraps the grep search with the dd display, then saves the selected result.
 Multiple results can also be selected, concatenated, and saved in a single file. That can be useful to 
 recover a text file larger than one partition block.
+
+<hr>
+
+:thought_balloon: **Follow-ups**
+
+- The UI faces some bugs regarding mouse integration. It possibly has more to do with py_cui than my poor implementation of it. I will try to push some fixes on py_cui repo.
+- Thereupon, py_cui will continue to evolve. My next action on recoverpy will certainly be a more complete usage of py_cui capabilities.
+- My handling of multi threading and multi processing may be improved to speed up the search. I've managed to work with the GIL and obtain acceptable performances. Still, I will try to improve it if I receive pertinent feedback.
