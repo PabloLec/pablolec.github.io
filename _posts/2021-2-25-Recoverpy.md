@@ -1,9 +1,7 @@
 ---
 published: true
 ---
-<p style="text-align: center;">
 ![demo](https://raw.githubusercontent.com/PabloLec/recoverpy/main/docs/assets/demo.gif)
-</p>
 * * *
 
 Hi ! :grinning:
