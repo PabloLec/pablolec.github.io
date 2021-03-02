@@ -1,8 +1,9 @@
 ---
 published: true
 ---
-## ![Demo]({{site.baseurl}}/https://raw.githubusercontent.com/PabloLec/recoverpy/main/docs/assets/demo.gif)
-
+<p style="text-align: center;">
+![demo]({{site.baseurl}}/https://raw.githubusercontent.com/PabloLec/recoverpy/main/docs/assets/demo.gif)
+</p>
 * * *
 
 Hi ! :grinning:
