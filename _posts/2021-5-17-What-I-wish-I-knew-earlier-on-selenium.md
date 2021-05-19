@@ -145,7 +145,9 @@ button = driver.find_element_by_xpath("//label[ends-with(@id,'Log')]")
 # Find last label.
 
 # XPath is case sensitive but several solutions exists.
-# You can use functions 'lower-case' and 'upper-case' but I'd rather use 'matches':# <b>Hello World</b>
+# You can use functions 'lower-case' and 'upper-case' but I'd rather use 'matches':
+
+### <b>Hello World</b>
 
 hello = driver.find_element_by_xpath("//b[matches(text(), 'hello world')]")
 
