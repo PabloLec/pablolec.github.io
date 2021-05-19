@@ -95,3 +95,74 @@ Take a look at the full list:
 - element_selection_state_to_be
 - element_located_selection_state_to_be
 - alert_is_present
+
+<hr>
+
+# XPath
+
+XPath, or XML Path Language, is a syntax for finding elements on a web page using XML path expression. It can be used to search though HTML DOM but also in other types of documents using a XML-like structure.
+
+XPath will be your most powerful ally to find any tricky element. I end up using it over all other built-in methods.
+A simple XPath query looks like this : 
+
+``` python
+link = driver.find_element_by_xpath("//TAGNAME[@ATTRIBUTE='VALUE']")
+
+# Or with actual values
+link = driver.find_element_by_xpath("//a[@href='https://www.google.com']")
+```
+
+But XPath can be a lot more useful than simple attribute/value queries. You can specify multiple conditions, search in a subelement, search contained substrings, etc.
+I like to think of it as SQL queries, sometimes with the readability of regex.
+
+Here are some examples:
+
+``` python
+
+### <a href="https://pablolec.github.io/myexamplelink">Follow this link !</a>
+
+link = driver.find_element_by_xpath("//*[contains(text(),"Follow")]")
+link = driver.find_element_by_xpath("//*[contains(@href,"myexamplelink")]")
+
+# Note that I use "*" as in regex to match any tag name.
+
+### <input type="submit" name="loginButton">
+### <input type="input" name="loginButton">
+
+buttons = driver.find_elements_by_xpath("//input[@type='submit' and @name='loginButton']")
+# "//input[@type='submit'][@name='loginButton']" would work too.
+# Find only the first button.
+buttons = driver.find_elements_by_xpath("//input[@type='submit' or @name='loginButton']")
+# Find both buttons.
+
+### <label id="logIn">foo</label>
+### <label id="logOut">bar</label>
+### <label id="userLog">baz</label>
+
+buttons = driver.find_elements_by_xpath("//label[starts-with(@id,'log')]")
+# Find only the first two labels.
+button = driver.find_element_by_xpath("//label[ends-with(@id,'Log')]")
+# Find last label.
+
+# XPath is case sensitive but several solutions exists.
+# You can use functions 'lower-case' and 'upper-case' but I'd rather use 'matches':# <b>Hello World</b>
+
+hello = driver.find_element_by_xpath("//b[matches(text(), 'hello world')]")
+
+### <div id="container"> <span> <h1>My Text</h1> </span> </text>
+
+container = driver.find_element_by_xpath("//*[text()='My Text']//ancestor::div")
+# Will search in all ancestors (parents, grand-parents, etc.).
+# Here, it will find the container div.
+
+header = driver.find_element_by_xpath("//*[@id='container']//child::h1")
+# You can also search in all childs.
+
+span = container.find_element_by_xpath(".//span")
+# As you can see, you can also search within a previous element.
+# You"ll have to replace the driver object by this element and add a dot at the beginning of your expression.
+```
+
+And there are many more things you can do with XPath. 
+Note that there are 3 versions of XPath, by default, Selenium will use your browser’s version and if it cannot find it, it will use XPath 1.0.  
+To learn more, you can give a read to [W3Schools tutorial](https://www.w3schools.com/xml/xpath_intro.asp) and [LambdaTest guide](https://www.lambdatest.com/blog/complete-guide-for-using-xpath-in-selenium-with-examples/).
