@@ -15,7 +15,7 @@ body {
   font-size: 1.125rem;
   color: #d7d3ce;
   position: relative;
-  background-color: "#141617";
+  background-color: #141617;
   {% if site.page-img %}
   background-image: url({{ site.page-img | relative_url }});
   background-attachment: fixed;
