@@ -13,9 +13,9 @@ html {
 body {
   font-family: 'Lora', 'Times New Roman', serif;
   font-size: 1.125rem;
-  color: {{ site.text-col | default: "#404040" }};
+  color: #d7d3ce;
   position: relative;
-  background-color: {{ site.page-col | default: "#FFFFFF" }};
+  background-color: "#141617";
   {% if site.page-img %}
   background-image: url({{ site.page-img | relative_url }});
   background-attachment: fixed;
@@ -788,7 +788,7 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   padding: 0.625rem 0.3125rem;
   background-color: #FFF;
   border-radius: 0;
-  color: #121212;
+  color: #141617;
 }
 @media (min-width: 768px) {
   .pagination .page-item .page-link {
