@@ -2,7 +2,7 @@
 .highlight  { background: #ffffff; }
 .highlight .c { color: #ff8fab; font-style: italic } /* Comment */
 .highlight .err { color: #FF0000; background-color: #FFAAAA } /* Error */
-.highlight .k { color: #228899; font-weight: bold } /* Keyword */
+.highlight .k { color: #e7fd7d; font-weight: bold } /* Keyword */
 .highlight .o { color: #20c997 } /* Operator */
 .highlight .ch { color: #ff8fab; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #ff8fab; font-style: italic } /* Comment.Multiline */
@@ -20,11 +20,11 @@
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
 .highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #228899; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #228899; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #228899; font-weight: bold } /* Keyword.Namespace */
+.highlight .kc { color: #e7fd7d; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #e7fd7d; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #e7fd7d; font-weight: bold } /* Keyword.Namespace */
 .highlight .kp { color: #0088ff; font-weight: bold } /* Keyword.Pseudo */
-.highlight .kr { color: #228899; font-weight: bold } /* Keyword.Reserved */
+.highlight .kr { color: #e7fd7d; font-weight: bold } /* Keyword.Reserved */
 .highlight .kt { color: #6666ff; font-weight: bold } /* Keyword.Type */
 .highlight .m { color: #6600EE; font-weight: bold } /* Literal.Number */
 /*.highlight .s { background-color: #e0e0ff } /* Literal.String */
@@ -37,7 +37,7 @@
 .highlight .ne { color: #FF0000; font-weight: bold } /* Name.Exception */
 .highlight .nf { color: #55eedd; font-weight: bold } /* Name.Function */
 .highlight .nl { color: #997700; font-weight: bold } /* Name.Label */
-.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nn { color: #f6c757; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #007700 } /* Name.Tag */
 .highlight .nv { color: #003366 } /* Name.Variable */
 .highlight .ow { color: #000000; font-weight: bold } /* Operator.Word */
