@@ -119,15 +119,15 @@ Here are some examples:
 
 ``` python
 
-### <a href="https://pablolec.github.io/myexamplelink">Follow this link !</a>
+# e.g. # <a href="https://pablolec.github.io/myexamplelink">Follow this link !</a>
 
 link = driver.find_element_by_xpath("//*[contains(text(),"Follow")]")
 link = driver.find_element_by_xpath("//*[contains(@href,"myexamplelink")]")
 
 # Note that I use "*" as in regex to match any tag name.
 
-### <input type="submit" name="loginButton">
-### <input type="input" name="loginButton">
+# e.g. # <input type="submit" name="loginButton">
+# e.g. # <input type="input" name="loginButton">
 
 buttons = driver.find_elements_by_xpath("//input[@type='submit' and @name='loginButton']")
 # "//input[@type='submit'][@name='loginButton']" would work too.
@@ -135,9 +135,9 @@ buttons = driver.find_elements_by_xpath("//input[@type='submit' and @name='login
 buttons = driver.find_elements_by_xpath("//input[@type='submit' or @name='loginButton']")
 # Find both buttons.
 
-### <label id="logIn">foo</label>
-### <label id="logOut">bar</label>
-### <label id="userLog">baz</label>
+# e.g. # <label id="logIn">foo</label>
+# e.g. # <label id="logOut">bar</label>
+# e.g. # <label id="userLog">baz</label>
 
 buttons = driver.find_elements_by_xpath("//label[starts-with(@id,'log')]")
 # Find only the first two labels.
@@ -147,11 +147,11 @@ button = driver.find_element_by_xpath("//label[ends-with(@id,'Log')]")
 # XPath is case sensitive but several solutions exists.
 # You can use functions 'lower-case' and 'upper-case' but I'd rather use 'matches':
 
-### <b>Hello World</b>
+# e.g. # <b>Hello World</b>
 
 hello = driver.find_element_by_xpath("//b[matches(text(), 'hello world')]")
 
-### <div id="container"> <span> <h1>My Text</h1> </span> </text>
+# e.g. # <div id="container"> <span> <h1>My Text</h1> </span> </text>
 
 container = driver.find_element_by_xpath("//*[text()='My Text']//ancestor::div")
 # Will search in all ancestors (parents, grand-parents, etc.).
