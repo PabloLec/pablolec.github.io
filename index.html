@@ -9,30 +9,63 @@
             rel="stylesheet"
             type="text/css"
             media="screen"
-            href="src/css/index.css"
+            href="src/css/index.min.css"
         />
+
+        <script src="/src/js/jquery.min.js"></script>
+
+        <script
+            src="/src/js/index.min.js"
+            async
+        ></script>
 
     </head>
 
     <body>
 
+<div id='container3d'>
+    <a href="#" id="face-close">
+    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.151 17.943l-4.143-4.102-4.117 4.159-1.833-1.833 4.104-4.157-4.162-4.119 1.833-1.833 4.155 4.102 4.106-4.16 1.849 1.849-4.1 4.141 4.157 4.104-1.849 1.849z"/></svg>
+    </a>
+    <canvas id="canvas3d"></canvas>
+
+</div>
+
+
+<main id="main" class="">
+<header id="header">
+<nav id="navbar">
+<div>Bonjour !</div>
+<div id="shortcuts">
+    <ol>
+    <li class="fadedown-enter-done" style="transition-delay: 0ms;"><a href="/#about">About</a></li>
+    <li class="fadedown-enter-done" style="transition-delay: 100ms;"><a href="/#jobs">Experience</a></li>
+    <li class="fadedown-enter-done" style="transition-delay: 200ms;"><a href="/#projects">Work</a></li>
+    <li class="fadedown-enter-done" style="transition-delay: 300ms;"><a href="/#contact">Contact</a></li>
+    </ol>
+    <div class="fadedown-enter-done" style="transition-delay: 400ms;">
+    <a id="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    </div>
+</div>
+</nav></header>
+
+
+
 <div id="link-bar">
 <ul id="link-list">
 <li class="link-logo">
 <a href="https://github.com/PabloLec" aria-label="GitHub" target="_blank" rel="noreferrer">
-<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
-<title>GitHub</title>
-<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
 </a>
 </li>
 <li class="link-logo">
 <a href="https://www.linkedin.com/in/pablo-lecolinet" aria-label="Linkedin" target="_blank" rel="noreferrer">
-<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin" style="--darkreader-inline-fill:none; --darkreader-inline-stroke:currentColor;" data-darkreader-inline-fill="" data-darkreader-inline-stroke="">
-<title>LinkedIn</title>
-<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-<rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/></svg>
+</a>
+</li>
+<li class="link-logo">
+<a href="mailto:pablo.lecolinet@gmail.com" aria-label="Linkedin" target="_blank" rel="noreferrer">
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
 </a>
 </li>
 </ul>
@@ -40,7 +73,7 @@
 
 <div id="face-bar">
 <div id="face-wrapper">
-<a id="face-link">
+<a id="face-link" href="">
 Voir ma tête
 </a>
 </div>
@@ -55,12 +88,15 @@ Voir ma tête
 
 <section id="main-content">
 
-<h2 class="section-heading">Qui suis-je ?</h2>
+<section id="whoami">
 
+<h2 class="section-heading">Qui suis-je ?</h2>
 
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultrices tortor in laoreet venenatis. Nullam id ante lacus. Quisque ex lectus, auctor in facilisis eu, auctor eu mauris. Maecenas fermentum ultricies ipsum, sit amet maximus libero porttitor sit amet. Etiam ante tortor, porttitor a ante id, egestas pellentesque libero. Aenean imperdiet tincidunt libero sit amet aliquet. In nec mi arcu. Suspendisse potenti. Duis vitae elit iaculis, consequat est at, placerat nisl. Suspendisse dictum nisl sit amet nunc malesuada iaculis. Fusce molestie tincidunt diam id feugiat. Quisque porttitor ac velit vitae gravida. Vestibulum ligula diam, ornare at nisl ut, auctor blandit tellus. Nullam ac leo ligula.
 
 Vivamus turpis turpis, viverra sit amet arcu in, tristique venenatis sem. Integer tincidunt sem velit, vitae fringilla nunc ultricies ut. Quisque sed mi et eros molestie volutpat. Etiam erat tortor, mollis nec tortor non, viverra tempus tortor. Vestibulum eget rutrum lectus. Donec iaculis rutrum dui, sed molestie dolor commodo sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum eu eros efficitur, scelerisque sem in, posuere tortor. Nulla at justo lacinia, vulputate mauris et, pharetra arcu. Morbi condimentum nisi a elit mattis, ut volutpat ipsum commodo. Suspendisse potenti. Cras purus ex, posuere sed dolor sit amet, mollis hendrerit leo. 
+
+</section>
 
 <section id="projects">
 
@@ -68,7 +104,7 @@ Vivamus turpis turpis, viverra sit amet arcu in, tristique venenatis sem. Intege
 
 <ul class="personal-projects">
     <li class="personal-project">
-        <div class="project-body">
+        <div class="project-body-left">
             <div>
 
                 <p class="project-overtitle">Lorem</p>
@@ -83,23 +119,117 @@ Vivamus turpis turpis, viverra sit amet arcu in, tristique venenatis sem. Intege
                 </ul>
 
 
-            </div>
+            </div>event.preventDefault()
         </div>
-        <div class="project-image">
-            <a href="https://octoprofile.now.sh" rel="noopener noreferrer" target="_blank">
+        <div class="project-image-right">
+            <a href="https://github.com/PabloLec/recoverpy" rel="noopener noreferrer" target="_blank">
             <div class="project-image-wrapper">
                 <img src="https://raw.githubusercontent.com/PabloLec/recoverpy/main/docs/assets/demo.gif"></img>
             </div>
             </a>
         </div>
     </li>
+
+    <li class="personal-project">
+        <div class="project-body-right">
+            <div>
+
+                <p class="project-overtitle">Lorem</p>
+                <h3 class="project-title">Insta Newspaper</h3>
+                <div class="project-desc">
+                Maecenas fermentum ultricies ipsum, sit amet maximus libero porttitor sit amet. Etiam ante tortor, porttitor a ante id, egestas pellentesque libero. Aenean imperdiet tincidunt libero sit amet aliquet.
+                </div>
+
+                <ul class="project-tech-list">
+                    <li>Python</li>
+                    <li>py-cui</li>
+                </ul>
+
+
+            </div>
+        </div>
+        <div class="project-image-left">
+            <a href="https://github.com/PabloLec/insta_newspaper" rel="noopener noreferrer" target="_blank">
+            <div class="project-image-wrapper">
+                <img src="/src/img/insta_newspaper.gif"></img>
+            </div>
+            </a>
+        </div>
+    </li>
+
+    <li class="personal-project">
+        <div class="project-body-left">
+            <div>
+
+                <p class="project-overtitle">Lorem</p>
+                <h3 class="project-title">Website to GIF</h3>
+                <div class="project-desc">
+                Maecenas fermentum ultricies ipsum, sit amet maximus libero porttitor sit amet. Etiam ante tortor, porttitor a ante id, egestas pellentesque libero. Aenean imperdiet tincidunt libero sit amet aliquet.
+                </div>
+
+                <ul class="project-tech-list">
+                    <li>Python</li>
+                    <li>py-cui</li>
+                </ul>
+
+
+            </div>
+        </div>
+        <div class="project-image-right">
+            <a href="https://github.com/PabloLec/website-to-gif" rel="noopener noreferrer" target="_blank">
+            <div class="project-image-wrapper">
+                <img src="https://raw.githubusercontent.com/PabloLec/website-to-gif/main/docs/images/ss_25_tps_100.gif"></img>
+            </div>
+            </a>
+        </div>
+    </li>
+
 </ul>
 
 </section>
 
-<h2 class="section-heading">Contact</h2>
+<section id="openclassroom-projects">
+<h2>Projets Openclassroom</h2>
+
+<ul id="oc-grid">
+    <li class="oc-project">
+        <div class="oc-wrapper">
+            <header>
+                <div class="oc-top">
+                    <div class="oc-link">
+                        <a href="https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c" aria-label="External Link" class="external" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link" data-darkreader-inline-fill="" data-darkreader-inline-stroke="" style="--darkreader-inline-fill:none; --darkreader-inline-stroke:currentColor;"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                    </div>
+                </div>
+
+                <h3 class="oc-title">Lorem Ipsum</h3>
+
+                <div class="oc-desc">
+                <p>Etiam erat tortor, mollis nec tortor non, viverra tempus tortor. Vestibulum eget rutrum lectus.</p>
+                </div>
+
+                
+            </header>
+        </div>
+
+    </li>
+</ul>
 
 </section>
 
+<section id="contact">
+
+<h2 class="section-heading">Contact</h2>
+
+Vivamus turpis turpis, viverra sit amet arcu in, tristique venenatis sem. Integer tincidunt sem velit, vitae fringilla nunc ultricies ut. Quisque sed mi et eros molestie volutpat. Etiam erat tortor, mollis nec tortor non, viverra tempus tortor. Vestibulum eget rutrum lectus. Donec iaculis rutrum dui, sed molestie dolor commodo sed.
+</section>
+
+</section>
+
+
+<script
+            src="/src/js/faceModal.js"
+            async
+        ></script>
+</main>
     </body>
 </html>
