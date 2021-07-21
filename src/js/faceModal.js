@@ -7,6 +7,9 @@ document.getElementById("face-link").addEventListener("click", function (e) {
 
   document.getElementById("container3d").style.display = "block";
   document.getElementById("main").classList.add("is-blurred");
+  document.getElementById("navbar").classList.add("is-blurred");
+  document.getElementById("link-list").classList.add("is-blurred");
+  document.getElementById("face-wrapper").classList.add("is-blurred");
 });
 
 document.getElementById("face-close").addEventListener("click", function (e) {
@@ -14,6 +17,9 @@ document.getElementById("face-close").addEventListener("click", function (e) {
   e.preventDefault();
   document.getElementById("container3d").style.display = "none";
   document.getElementById("main").classList.remove("is-blurred");
+  document.getElementById("navbar").classList.remove("is-blurred");
+  document.getElementById("link-list").classList.remove("is-blurred");
+  document.getElementById("face-wrapper").classList.remove("is-blurred");
 });
 
 async function loadFaceScript() {

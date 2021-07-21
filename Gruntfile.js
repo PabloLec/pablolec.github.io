@@ -9,7 +9,7 @@ module.exports = function (grunt) {
       },
     },
     uglify: {
-      face: {
+      index: {
         src: "src/js/index.js",
         dest: "src/js/index.min.js",
       },

@@ -32,19 +32,18 @@
 </div>
 
 
-<main id="main" class="">
+
 <header id="header">
 <nav id="navbar">
 <div>Bonjour !</div>
 <div id="shortcuts">
     <ol>
-    <li class="fadedown-enter-done" style="transition-delay: 0ms;"><a href="/#about">About</a></li>
-    <li class="fadedown-enter-done" style="transition-delay: 100ms;"><a href="/#jobs">Experience</a></li>
-    <li class="fadedown-enter-done" style="transition-delay: 200ms;"><a href="/#projects">Work</a></li>
+    <li class="fadedown-enter-done" style="transition-delay: 0ms;"><a href="/#whoami">Qui suis-je ?</a></li>
+    <li class="fadedown-enter-done" style="transition-delay: 100ms;"><a href="/#projects">Projets</a></li>
     <li class="fadedown-enter-done" style="transition-delay: 300ms;"><a href="/#contact">Contact</a></li>
     </ol>
     <div class="fadedown-enter-done" style="transition-delay: 400ms;">
-    <a id="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    <a id="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">CV</a>
     </div>
 </div>
 </nav></header>
@@ -78,6 +77,10 @@ Voir ma tête
 </a>
 </div>
 </div>
+
+
+
+<main id="main" class="">
 
 <div id="name-wrapper">
     <div id="name-container">
@@ -119,7 +122,7 @@ Vivamus turpis turpis, viverra sit amet arcu in, tristique venenatis sem. Intege
                 </ul>
 
 
-            </div>event.preventDefault()
+            </div>
         </div>
         <div class="project-image-right">
             <a href="https://github.com/PabloLec/recoverpy" rel="noopener noreferrer" target="_blank">
@@ -188,27 +191,242 @@ Vivamus turpis turpis, viverra sit amet arcu in, tristique venenatis sem. Intege
 
 </section>
 
-<section id="openclassroom-projects">
-<h2>Projets Openclassroom</h2>
+<section id="openclassrooms-projects">
+<h2>Projets OpenClassrooms</h2>
 
 <ul id="oc-grid">
     <li class="oc-project">
         <div class="oc-wrapper">
             <header>
                 <div class="oc-top">
-                    <div class="oc-link">
-                        <a href="https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c" aria-label="External Link" class="external" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link" data-darkreader-inline-fill="" data-darkreader-inline-stroke="" style="--darkreader-inline-fill:none; --darkreader-inline-stroke:currentColor;"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                    <div class="oc-folder-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="oc-folder"><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="oc-link-wrapper">
+                        <a href="https://github.com/PabloLec/oc_web_scraper" aria-label="External Link" class="external" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="oc-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
                     </div>
                 </div>
 
-                <h3 class="oc-title">Lorem Ipsum</h3>
+                <h3 class="oc-title">Web Scraper</h3>
 
                 <div class="oc-desc">
-                <p>Etiam erat tortor, mollis nec tortor non, viverra tempus tortor. Vestibulum eget rutrum lectus.</p>
+                <p>Scraping d'une librairie en ligne pour exploitation ultérieure.</p>
                 </div>
 
-                
             </header>
+            <footer>
+            <ul class="oc-tech-list">
+            <li>Scraping</li>
+            <li>Beautiful Soup 4</li>
+            </ul>
+            </footer>
+        </div>
+
+    </li>
+    
+    <li class="oc-project">
+        <div class="oc-wrapper">
+            <header>
+                <div class="oc-top">
+                    <div class="oc-folder-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="oc-folder"><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="oc-link-wrapper">
+                        <a href="/src/zip/P3.zip" aria-label="External Link" class="external" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="oc-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                    </div>
+                </div>
+
+                <h3 class="oc-title">Planification Agile</h3>
+
+                <div class="oc-desc">
+                <p>Prise en compte de besoins client et rédaction de diagrammes de cas d’usage, user stories, wireframes et tableau kanban.</p>
+                </div>
+
+            </header>
+            <footer>
+            <ul class="oc-tech-list">
+            <li>Agilité</li>
+            <li>Figma</li>
+            <li>Trello</li>
+            </ul>
+            </footer>
+        </div>
+
+    </li>
+
+    <li class="oc-project">
+        <div class="oc-wrapper">
+            <header>
+                <div class="oc-top">
+                    <div class="oc-folder-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="oc-folder"><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="oc-link-wrapper">
+                        <a href="https://github.com/PabloLec/oc_chess_club" aria-label="External Link" class="external" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="oc-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                    </div>
+                </div>
+
+                <h3 class="oc-title">CLI</h3>
+
+                <div class="oc-desc">
+                <p>Application avec CLI pour un club d'échecs permettant la gestion d'une BDD, l'organisation et le déroulement de tournois.</p>
+                </div>
+
+            </header>
+            <footer>
+            <ul class="oc-tech-list">
+            <li>MVC</li>
+            <li>CLI</li>
+            <li>Typer</li>
+            </ul>
+            </footer>
+        </div>
+
+    </li>
+
+    <li class="oc-project">
+        <div class="oc-wrapper">
+            <header>
+                <div class="oc-top">
+                    <div class="oc-folder-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="oc-folder"><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="oc-link-wrapper">
+                        <a href="https://github.com/PabloLec/oc_just_stream_it" aria-label="External Link" class="external" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="oc-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                    </div>
+                </div>
+
+                <h3 class="oc-title">Vanilla Frontend</h3>
+
+                <div class="oc-desc">
+                <p>Frontend entièrement vanilla pour une plateforme de VOD. <br/>Utilisation d'une API REST en backend.</p>
+                </div>
+
+            </header>
+            <footer>
+            <ul class="oc-tech-list">
+            <li>HTML, CSS, JS</li>
+            <li>API REST</li>
+            </ul>
+            </footer>
+        </div>
+
+    </li>
+
+    <li class="oc-project">
+        <div class="oc-wrapper">
+            <header>
+                <div class="oc-top">
+                    <div class="oc-folder-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="oc-folder"><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="oc-link-wrapper">
+                        <a href="https://github.com/PabloLec/oc_share_portofolio" aria-label="External Link" class="external" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="oc-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                    </div>
+                </div>
+
+                <h3 class="oc-title">Algorithmique</h3>
+
+                <div class="oc-desc">
+                <p>Production d'un algorithme, optimisé en temps et en espace, pour une société d'investissement.<br/>Son but est de distribuer de manière optimale l'achat d'actions pour un portefeuille donné.</p>
+                </div>
+
+            </header>
+            <footer>
+            <ul class="oc-tech-list">
+            <li>Programmation dynamique</li>
+            <li>Complexité</li>
+            <li>Optimisation</li>
+            </ul>
+            </footer>
+        </div>
+
+    </li>
+
+    <li class="oc-project">
+        <div class="oc-wrapper">
+            <header>
+                <div class="oc-top">
+                    <div class="oc-folder-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="oc-folder"><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="oc-link-wrapper">
+                        <a href="https://github.com/PabloLec/oc_lit_review" aria-label="External Link" class="external" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="oc-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                    </div>
+                </div>
+
+                <h3 class="oc-title">Application Web</h3>
+
+                <div class="oc-desc">
+                <p>MVP d'une plateforme de partage de critiques littéraires. <br/>Prise en compte d'un cahier des charges et de wireframes.</p>
+                </div>
+
+            </header>
+            <footer>
+            <ul class="oc-tech-list">
+            <li>Django</li>
+            <li>SQLite</li>
+            </ul>
+            </footer>
+        </div>
+
+    </li>
+
+    <li class="oc-project">
+        <div class="oc-wrapper">
+            <header>
+                <div class="oc-top">
+                    <div class="oc-folder-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="oc-folder"><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="oc-link-wrapper">
+                        <a href="https://github.com/PabloLec/oc_lit_review" aria-label="External Link" class="external" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="oc-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                    </div>
+                </div>
+
+                <h3 class="oc-title">API REST sécurisée</h3>
+
+                <div class="oc-desc">
+                <p>MVP d'une API REST pour une plateforme de gestion de projet dans l'esprit de GitHub. <br/>Attention particulière sur la sécurité et la prise en compte des vulnérabilités communes.</p>
+                </div>
+
+            </header>
+            <footer>
+            <ul class="oc-tech-list">
+            <li>API REST</li>
+            <li>Django</li>
+            </ul>
+            </footer>
+        </div>
+
+    </li>
+
+    <li class="oc-project">
+        <div class="oc-wrapper">
+            <header>
+                <div class="oc-top">
+                    <div class="oc-folder-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="oc-folder"><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="oc-link-wrapper">
+                        <a href="https://github.com/PabloLec/oc_gudlift" aria-label="External Link" class="external" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="oc-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                    </div>
+                </div>
+
+                <h3 class="oc-title">Intégration continue</h3>
+
+                <div class="oc-desc">
+                <p>Débugage d'un application Web et implémentation de features demandés.<br/> Puis, mise en place de tests unitaires, d'intégration et fonctionnels pour une couverture totale.</p>
+                </div>
+
+            </header>
+            <footer>
+            <ul class="oc-tech-list">
+            <li>pytest</li>
+            <li>Selenium</li>
+            <li>GH Actions</li>
+            </ul>
+            </footer>
         </div>
 
     </li>
