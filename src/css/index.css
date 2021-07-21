@@ -391,6 +391,15 @@ a:hover {
   animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
+.bio-category {
+  color: var(--green);
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+}
+
+.bio-link {
+  text-decoration: underline dotted var(--green);
+}
+
 #projects {
   -webkit-animation: 2s ease-out 0s 1 slideInFromLeft;
   -moz-animation: 2s ease-out 0s 1 slideInFromLeft;
