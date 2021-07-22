@@ -99,39 +99,114 @@ section {
   -webkit-filter: blur(5px);
 }
 
-#header {
-  background-color: rgba(14, 24, 41, 0.85);
-  display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  align-items: center;
-  position: fixed;
-  top: 0px;
-  z-index: 11;
-  padding: 0px 50px;
-  width: 100%;
-  height: var(--nav-height);
-  background-color: rgba(10, 25, 47, 0.85);
-  backdrop-filter: blur(10px);
-  filter: none !important;
-  pointer-events: auto !important;
-  user-select: auto !important;
-  transition: top 1s;
+@media all and (min-width: 768px) {
+	#header {
+	  background-color: rgba(14, 24, 41, 0.85);
+	  display: flex;
+	  -webkit-box-pack: justify;
+	  justify-content: space-between;
+	  -webkit-box-align: center;
+	  align-items: center;
+	  position: fixed;
+	  top: 0px;
+	  z-index: 11;
+	  width: 100%;
+	  height: var(--nav-height);
+	  background-color: rgba(10, 25, 47, 0.85);
+	  backdrop-filter: blur(10px);
+	  filter: none !important;
+	  pointer-events: auto !important;
+	  user-select: auto !important;
+	  transition: top 1s;
+	}
+
+	#navbar {
+	  display: flex;
+	  -webkit-box-pack: justify;
+	  justify-content: space-between;
+	  -webkit-box-align: center;
+	  align-items: center;
+	  position: relative;
+	  width: 95%;
+	  color: var(--lightest-slate);
+	  font-family: var(--font-mono);
+	  counter-reset: item 0;
+	  z-index: 12;
+	}
+
+	#hello {
+	  padding: 0px 50px;
+	}
+
+	#resume-button {
+	  color: var(--green);
+	  background-color: transparent;
+	  border: 1px solid var(--green);
+	  border-radius: var(--border-radius);
+	  padding: 0.75rem 1rem;
+	  font-family: var(--font-mono);
+	  line-height: 1;
+	  text-decoration: none;
+	  cursor: pointer;
+	  transition: var(--transition);
+	  margin-left: 15px;
+	  font-size: var(--fz-xs);
+	}
 }
 
-#navbar {
-  display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  align-items: center;
-  position: relative;
-  width: 95%;
-  color: var(--lightest-slate);
-  font-family: var(--font-mono);
-  counter-reset: item 0;
-  z-index: 12;
+@media all and (max-width: 768px) {
+	#header {
+	  background-color: rgba(14, 24, 41, 0.85);
+	  display: flex;
+	  -webkit-box-pack: justify;
+	  justify-content: space-between;
+	  -webkit-box-align: center;
+	  align-items: center;
+	  position: fixed;
+	  top: 0px;
+	  z-index: 11;
+	  width: 100%;
+	  height: var(--nav-height);
+	  background-color: rgba(10, 25, 47, 0.85);
+	  backdrop-filter: blur(10px);
+	  filter: none !important;
+	  pointer-events: auto !important;
+	  user-select: auto !important;
+	  transition: top 1s;
+	}
+
+	#navbar {
+	  display: flex;
+	  -webkit-box-pack: justify;
+	  justify-content: right;
+	  -webkit-box-align: center;
+	  align-items: center;
+	  position: relative;
+	  width: 95%;
+	  color: var(--lightest-slate);
+	  font-family: var(--font-mono);
+	  counter-reset: item 0;
+	  z-index: 12;
+	}
+
+	#hello {
+	  display: none;
+	}
+
+	#resume-button {
+	  color: var(--green);
+	  background-color: transparent;
+	  border: 1px solid var(--green);
+	  border-radius: var(--border-radius);
+	  padding: 0.75rem 1rem;
+	  font-family: var(--font-mono);
+	  line-height: 1;
+	  text-decoration: none;
+	  cursor: pointer;
+	  transition: var(--transition);
+	  margin-left: 15px;
+	  font-size: var(--fz-xs);
+	}
 }
 
 #shortcuts {
@@ -165,27 +240,74 @@ section {
   padding: 10px;
 }
 
-#resume-button {
-  color: var(--green);
-  background-color: transparent;
-  border: 1px solid var(--green);
-  border-radius: var(--border-radius);
-  padding: 0.75rem 1rem;
-  font-family: var(--font-mono);
-  line-height: 1;
-  text-decoration: none;
-  cursor: pointer;
-  transition: var(--transition);
-  margin-left: 15px;
-  font-size: var(--fz-xs);
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
 }
 
-#name-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5rem;
-  width: 80%;
-  font: 16px/1.25 "Raleway", sans-serif;
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@media all and (min-width: 768px) {
+	#name-wrapper {
+	  margin-left: auto;
+	  margin-right: auto;
+	  margin-top: 5rem;
+	  width: 80%;
+	  font: 16px/1.25 "Raleway", sans-serif;
+	  animation: fadeIn ease 3.5s;
+      -webkit-animation: fadeIn ease 3.5s;
+      -moz-animation: fadeIn ease 3.5s;
+      -o-animation: fadeIn ease 3.5s;
+      -ms-animation: fadeIn ease 3.5s;
+	}
+}
+
+@media all and (max-width: 768px) {
+	#name-wrapper {
+	  margin-left: auto;
+	  margin-right: auto;
+	  margin-top: 5rem;
+	  width: 80%;
+	  font: 1.7vw/1.25 "Raleway", sans-serif;
+	}
 }
 
 #name-container {
@@ -206,7 +328,6 @@ section {
 #name-container h1 span {
 	cursor: pointer;
 	display: inline-block;
-	font-size: 100px;
 	user-select: none;
 	line-height: .8;
 }
@@ -349,93 +470,177 @@ a:hover {
 
 
 
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+
+@media all and (min-width: 768px) {
+	#link-bar {
+	  width: 40px;
+	  position: fixed;
+	  bottom: 0px;
+	  left: 40px;
+	  right: auto;
+	  z-index: 10;
+	  color: #ccd6f6;
+	}
+
+	#link-bar::after {
+	  content: "";
+	  display: block;
+	  width: 1px;
+	  height: 90px;
+	  margin: 0px auto;
+	  background-color: #233554;
+	}
+
+	#link-list {
+	  display: flex;
+	  flex-direction: column;
+	  -moz-box-align: center;
+	  align-items: center;
+	  margin: 0px;
+	  padding: 0px;
+	  list-style: outside none none;
+	}
+
+	#link-list a {
+	  color: #d8d4cf;
+	}
+
+	.link-logo {
+	  margin-bottom: 1rem;
+	  transition: transform 0.5s;
+	}
+
+	.link-logo:hover {
+	  transform: translateX(5px);
+	}
 }
 
-#link-bar {
-  width: 40px;
-  position: fixed;
-  bottom: 0px;
-  left: 40px;
-  right: auto;
-  z-index: 10;
-  color: #ccd6f6;
+@media all and (max-width: 768px) {
+	#link-bar {
+	  width: 20px;
+	  position: fixed;
+	  bottom: 0px;
+	  left: 20px;
+	  right: auto;
+	  z-index: 10;
+	  color: #ccd6f6;
+	}
+
+	#link-bar::after {
+	  content: "";
+	  display: block;
+	  width: 1px;
+	  height: 45px;
+	  margin: 0px auto;
+	  background-color: #233554;
+	}
+
+	#link-list {
+	  display: flex;
+	  flex-direction: column;
+	  -moz-box-align: center;
+	  align-items: center;
+	  margin: 0px;
+	  padding: 0px;
+	  list-style: outside none none;
+	}
+
+	#link-list a {
+	  color: #d8d4cf;
+	}
+
+	.link-logo {
+	  margin-bottom: 1rem;
+	  transition: transform 0.5s;
+	}
+
+	.link-logo a svg {
+	  transform: scale(0.66);
+	}
+
+	.link-logo:hover {
+	  transform: translateX(5px);
+	}
 }
 
-#link-bar::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 90px;
-  margin: 0px auto;
-  background-color: #233554;
+@media all and (min-width: 768px) {
+	#face-bar {
+	  width: 40px;
+	  position: fixed;
+	  bottom: 0px;
+	  left: auto;
+	  right: 40px;
+	  z-index: 10;
+	  color: #a8b2d1;
+	}
+
+	#face-wrapper {
+	  display: flex;
+	  flex-direction: column;
+	  -moz-box-align: center;
+	  align-items: center;
+	  position: relative;
+	}
+
+	#face-wrapper a {
+	  margin-bottom: 1rem;
+	  padding: 10px;
+	  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+	  font-size: 13px;
+	  line-height: 42px;
+	  letter-spacing: 0.1em;
+	  writing-mode: vertical-rl;
+	  color: #ccd6f6;
+	}
+
+	#face-wrapper::after {
+	  content: "";
+	  display: block;
+	  width: 1px;
+	  height: 90px;
+	  margin: 0px auto;
+	  background-color: #233554;
+	}
 }
 
-#link-list {
-  display: flex;
-  flex-direction: column;
-  -moz-box-align: center;
-  align-items: center;
-  margin: 0px;
-  padding: 0px;
-  list-style: outside none none;
-}
+@media all and (max-width: 768px) {
+	#face-bar {
+	  width: 20px;
+	  position: fixed;
+	  bottom: 0px;
+	  left: auto;
+	  right: 20px;
+	  z-index: 10;
+	  color: #a8b2d1;
+	}
 
-#link-list a {
-  color: #d8d4cf;
-}
+	#face-wrapper {
+	  display: flex;
+	  flex-direction: column;
+	  -moz-box-align: center;
+	  align-items: center;
+	  position: relative;
+	}
 
-.link-logo {
-  margin-bottom: 1rem;
-  transition: transform 0.5s;
-}
+	#face-wrapper a {
+	  margin-bottom: 1rem;
+	  padding: 10px;
+	  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+	  font-size: 13px;
+	  line-height: 42px;
+	  letter-spacing: 0.1em;
+	  writing-mode: vertical-rl;
+	  color: #ccd6f6;
+	}
 
-.link-logo:hover {
-  transform: translateX(5px);
-}
-
-#face-bar {
-  width: 40px;
-  position: fixed;
-  bottom: 0px;
-  left: auto;
-  right: 40px;
-  z-index: 10;
-  color: #a8b2d1;
-}
-
-#face-wrapper {
-  display: flex;
-  flex-direction: column;
-  -moz-box-align: center;
-  align-items: center;
-  position: relative;
-}
-
-#face-wrapper a {
-  margin-bottom: 1rem;
-  padding: 10px;
-  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
-  font-size: 13px;
-  line-height: 42px;
-  letter-spacing: 0.1em;
-  writing-mode: vertical-rl;
-  color: #ccd6f6;
-}
-
-#face-wrapper::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 90px;
-  margin: 0px auto;
-  background-color: #233554;
+	#face-wrapper::after {
+	  content: "";
+	  display: block;
+	  width: 1px;
+	  height: 45px;
+	  margin: 0px auto;
+	  background-color: #233554;
+	}
 }
 
 #main-content {
@@ -492,10 +697,23 @@ a:hover {
   max-width: 1000px;
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100;
+  }
+}
+
 #whoami {
-  -webkit-animation: 1s ease-out 0s 1 slideInFromLeft;
-  -moz-animation: 1s ease-out 0s 1 slideInFromLeft;
-  animation: 1s ease-out 0s 1 slideInFromLeft;
+  opacity: 0;
+  -webkit-animation: slideInFromLeft 2s ease 3.5s forwards;
+     -moz-animation: slideInFromLeft 2s ease 3.5s forwards;
+       -o-animation: slideInFromLeft 2s ease 3.5s forwards;
+          animation: slideInFromLeft 2s ease 3.5s forwards;
 }
 
 #bio {
@@ -518,9 +736,11 @@ a:hover {
 }
 
 #projects {
-  -webkit-animation: 2s ease-out 0s 1 slideInFromLeft;
-  -moz-animation: 2s ease-out 0s 1 slideInFromLeft;
-  animation: 2s ease-out 0s 1 slideInFromLeft;
+  opacity: 0;
+  -webkit-animation: slideInFromLeft 2s ease 5.5s forwards;
+     -moz-animation: slideInFromLeft 2s ease 5.5s forwards;
+       -o-animation: slideInFromLeft 2s ease 5.5s forwards;
+          animation: slideInFromLeft 2s ease 5.5s forwards;
 }
 
 .personal-projects {
