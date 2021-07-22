@@ -48,24 +48,4 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 };
 
-function getIGDate() {
-  today = new Date();
-  let dd = today.getDate();
-  let mm = today.getMonth() + 1;
-  let yyyy = "1914";
 
-  if (dd < 10) dd = "0" + dd;
-  if (mm < 10) mm = "0" + mm;
-  document.getElementById("IG-date").textContent = dd + "/" + mm + "/" + yyyy;
-}
-
-function calculateAge() {
-  // birthday is a date
-  let ageDifMs = Date.now() - Date.parse("16 Jul 1993 00:00:00 GMT");
-  let ageDate = new Date(ageDifMs);
-  let age = Math.abs(ageDate.getUTCFullYear() - 1970);
-  document.getElementById("my-age").textContent = age;
-}
-
-calculateAge();
-getIGDate();

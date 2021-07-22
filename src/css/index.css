@@ -66,6 +66,10 @@ a {
   transition: var(--transition);
 }
 
+section {
+	width: 100%;
+}
+
 #container3d {
   width: 100%;
   height: 100%;
@@ -196,6 +200,111 @@ a {
   font-size: 5em;
   font-weight: 900;
   line-height: 1;
+  perspective: 1000px; 
+}
+
+#name-container h1 span {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 100px;
+	user-select: none;
+	line-height: .8;
+}
+
+#name-container h1 span:nth-child(1).active {
+	animation: balance 1.5s ease-out;
+	transform-origin: bottom left;
+}
+
+@keyframes balance {
+	0%, 100% {
+		transform: rotate(0deg);
+	}
+	
+	30%, 60% {
+		transform: rotate(-45deg);
+	}
+}
+
+#name-container h1 span:nth-child(9n+2).active,
+#name-container h1 span:nth-child(7n+4).active,
+#name-container h1 span:nth-child(7n+7).active {
+	animation: shrinkjump 1s ease-in-out;
+	transform-origin: bottom center;
+}
+
+@keyframes shrinkjump {
+	10%, 35% {
+		transform: scale(2, .2) translate(0, 0);
+	}
+	
+	45%, 50% {
+		transform: scale(1) translate(0, -150px);
+	}
+	
+	80% {
+		transform: scale(1) translate(0, 0);
+	}
+}
+
+#name-container h1 span:nth-child(5n+3).active,
+#name-container h1 span:nth-child(6n+6).active {
+	animation: falling 2s ease-out;
+	transform-origin: bottom center;
+}
+
+@keyframes falling {
+	12% {
+		transform: rotateX(240deg);
+	}
+	
+	24% {
+		transform: rotateX(150deg);
+	}
+	
+	36% {
+		transform: rotateX(200deg);
+	}
+	
+	48% {
+		transform: rotateX(175deg);
+	}
+	
+	60%, 85% {
+		transform: rotateX(180deg);
+	}
+	
+	100% {
+		transform: rotateX(0deg);
+	}
+}
+
+#name-container h1 span:nth-child(5n+5).active {
+	animation: rotate 1s ease-out;
+}
+
+@keyframes rotate {
+	20%, 80% {
+		transform: rotateY(180deg);
+	}
+	
+	100% {
+		transform: rotateY(360deg);
+	}
+}
+
+#name-container h1 span:nth-child(4n+9).active {
+	animation: toplong 1.5s linear;
+}
+
+@keyframes toplong {
+	10%, 40% {
+		transform: translateY(-48vh) scaleY(1);
+	}
+	
+	90% {
+		transform: translateY(-48vh) scaleY(4);
+	}
 }
 
 #name-container h1:hover {
@@ -238,12 +347,7 @@ a:hover {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-}
+
 
 @keyframes slideInFromLeft {
   0% {
@@ -353,6 +457,9 @@ a:hover {
   align-items: center;
   position: relative;
   margin: 10px 0px 40px;
+  -moz-box-align: center;
+  align-items: center;
+  position: relative;
   width: 100%;
   white-space: nowrap;
   font-weight: 600;
@@ -391,9 +498,19 @@ a:hover {
   animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
+#bio {
+  text-align: left;
+  line-height: 1.75;
+}
+
 .bio-category {
   color: var(--green);
   font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  cursor: pointer;
+}
+
+#bio-cat2, #bio-cat3 {
+  display: none;
 }
 
 .bio-link {
@@ -590,7 +707,7 @@ a:hover {
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   position: relative;
   cursor: default;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 
 .oc-wrapper {
@@ -602,7 +719,7 @@ a:hover {
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  height: 100%;
+  min-height: 80%;
   padding: 2rem 1.75rem;
   border-radius: var(--border-radius);
   background-color: var(--light-navy);
@@ -679,4 +796,56 @@ a:hover {
   font-size: var(--fz-xxs);
   line-height: 1.75;
   margin-right: 1rem;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+#mail {
+    display: block;
+    font: 10.5em 'Montserrat';
+    width: 100%;
+    font-weight: 800;
+    font-size: 3rem;
+    height: auto;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+
+.text-copy:nth-child(1){
+	stroke: #14ffec;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #00ced4;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #049fb1;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #277287;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #2a4858;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
 }
