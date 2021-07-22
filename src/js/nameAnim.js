@@ -10,4 +10,9 @@ spans.forEach((span, idx) => {
 	
 });
 
-spans[0].classList.add('active')
+async function firstLetterAnimation() {
+	await new Promise(r => setTimeout(r, 2000));
+	spans[0].classList.add('active')
+}
+
+firstLetterAnimation()
