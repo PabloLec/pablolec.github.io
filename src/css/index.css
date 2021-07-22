@@ -99,6 +99,15 @@ section {
   -webkit-filter: blur(5px);
 }
 
+@-webkit-keyframes slideDown {
+    100% { top: 0; }
+}
+
+@keyframes slideDown {
+    100% { top: 0; }
+}
+
+
 @media all and (min-width: 768px) {
 	#header {
 	  background-color: rgba(14, 24, 41, 0.85);
@@ -108,7 +117,7 @@ section {
 	  -webkit-box-align: center;
 	  align-items: center;
 	  position: fixed;
-	  top: 0px;
+	  top: -200px;
 	  z-index: 11;
 	  width: 100%;
 	  height: var(--nav-height);
@@ -118,6 +127,8 @@ section {
 	  pointer-events: auto !important;
 	  user-select: auto !important;
 	  transition: top 1s;
+	  animation: slideDown 0.5s forwards;
+	  -webkit-animation: slideDown 0.5s forwards;
 	}
 
 	#navbar {
@@ -163,7 +174,7 @@ section {
 	  -webkit-box-align: center;
 	  align-items: center;
 	  position: fixed;
-	  top: 0px;
+	  top: -200px;
 	  z-index: 11;
 	  width: 100%;
 	  height: var(--nav-height);
@@ -173,6 +184,8 @@ section {
 	  pointer-events: auto !important;
 	  user-select: auto !important;
 	  transition: top 1s;
+	  animation: slideDown 0.5s forwards;
+	  -webkit-animation: slideDown 0.5s forwards;
 	}
 
 	#navbar {
@@ -468,6 +481,13 @@ a:hover {
   }
 }
 
+@-webkit-keyframes slide {
+    100% { bottom: 0; }
+}
+
+@keyframes slide {
+    100% { bottom: 0; }
+}
 
 
 
@@ -475,11 +495,13 @@ a:hover {
 	#link-bar {
 	  width: 40px;
 	  position: fixed;
-	  bottom: 0px;
+	  bottom: -200px;
 	  left: 40px;
 	  right: auto;
 	  z-index: 10;
 	  color: #ccd6f6;
+	  animation: slide 1.2s forwards;
+	  -webkit-animation: slide 1.2s forwards;
 	}
 
 	#link-bar::after {
@@ -519,11 +541,13 @@ a:hover {
 	#link-bar {
 	  width: 20px;
 	  position: fixed;
-	  bottom: 0px;
+	  bottom: -200px;
 	  left: 20px;
 	  right: auto;
 	  z-index: 10;
 	  color: #ccd6f6;
+	  animation: slide 1.2s forwards;
+	  -webkit-animation: slide 1.2s forwards;
 	}
 
 	#link-bar::after {
@@ -550,7 +574,7 @@ a:hover {
 	}
 
 	.link-logo {
-	  margin-bottom: 1rem;
+	  margin-bottom: 0.5rem;
 	  transition: transform 0.5s;
 	}
 
@@ -567,11 +591,13 @@ a:hover {
 	#face-bar {
 	  width: 40px;
 	  position: fixed;
-	  bottom: 0px;
+	  bottom: -200px;
 	  left: auto;
 	  right: 40px;
 	  z-index: 10;
 	  color: #a8b2d1;
+	  animation: slide 1.2s forwards;
+	  -webkit-animation: slide 1.2s forwards;
 	}
 
 	#face-wrapper {
@@ -607,11 +633,13 @@ a:hover {
 	#face-bar {
 	  width: 20px;
 	  position: fixed;
-	  bottom: 0px;
+	  bottom: -200px;
 	  left: auto;
 	  right: 20px;
 	  z-index: 10;
 	  color: #a8b2d1;
+	  animation: slide 1.2s forwards;
+	  -webkit-animation: slide 1.2s forwards;
 	}
 
 	#face-wrapper {

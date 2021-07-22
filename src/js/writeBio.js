@@ -25,7 +25,7 @@ function typeBio1() {
 
 	var typewriter = new Typewriter(bio, {
 	    loop: false,
-	    delay: 40,
+	    delay: 20,
 	});
 
 	let content =`Je suis devenu militaire à 18 ans après avoir passé un Bac S, je me suis engagé dans la Marine Nationale en tant que sous-officier.
@@ -75,7 +75,7 @@ function typeBio2() {
 
 	var typewriter = new Typewriter(bio, {
 	    loop: false,
-	    delay: 40,
+	    delay: 20,
 	});
 
 	let content =`Et bien, il n'y en a pas beaucoup effectivement.
@@ -118,7 +118,7 @@ function typeBio3() {
 
 	var typewriter = new Typewriter(bio, {
 	    loop: false,
-	    delay: 40,
+	    delay: 20,
 	});
 
 	let content =`J'ai démarré l'apprentissage de la programmation logicielle avec Python, et c'est toujours mon langage de prédiliction aujourd'hui.
