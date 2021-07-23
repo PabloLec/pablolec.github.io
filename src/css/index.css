@@ -939,6 +939,16 @@ a:hover {
   max-height: 100%;
 }
 
+.project-image-wrapper video {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 #openclassrooms-projects {
   display: flex;
   flex-direction: column;
@@ -948,6 +958,11 @@ a:hover {
   padding: 100px 0px;
   width: 100%;
   max-width: 1000px;
+  opacity: 0;
+  -webkit-animation: slideInFromLeft 2s ease 6.5s forwards;
+  -moz-animation: slideInFromLeft 2s ease 6.5s forwards;
+  -o-animation: slideInFromLeft 2s ease 6.5s forwards;
+  animation: slideInFromLeft 2s ease 6.5s forwards;
 }
 
 #oc-grid {
@@ -1058,6 +1073,14 @@ a:hover {
   font-size: var(--fz-xxs);
   line-height: 1.75;
   margin-right: 1rem;
+}
+
+#contact {
+  opacity: 0;
+  -webkit-animation: slideInFromLeft 2s ease 7.5s forwards;
+  -moz-animation: slideInFromLeft 2s ease 7.5s forwards;
+  -o-animation: slideInFromLeft 2s ease 7.5s forwards;
+  animation: slideInFromLeft 2s ease 7.5s forwards;
 }
 
 @media all and (min-width: 768px) {
