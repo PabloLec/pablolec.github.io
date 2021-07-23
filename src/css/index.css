@@ -1163,6 +1163,9 @@ a:hover {
   top: 50%;
   width: 80px;
   height: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .lds-ripple div {
   position: absolute;
@@ -1194,6 +1197,29 @@ a:hover {
 #pleaseWait {
   position: fixed;
   top: 70%;
-
+  width: 100%;
   font-size: 2vw;
+}
+
+#pleaseWait:after {
+  animation: dotty steps(1, end) 1s infinite;
+  content: "";
+}
+
+@keyframes dotty {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+  100% {
+    content: "";
+  }
 }
