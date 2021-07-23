@@ -1,7 +1,11 @@
 module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
-	concat: {
+    concat: {
+      face: {
+        src: ["src/js/three.js", "src/js/anime.js", "src/js/runtime.js", "src/js/face.js"],
+        dest: "src/js/faceApp.js",
+      },
       index: {
         src: ["src/js/jquery.min.js", "src/js/index.js"],
         dest: "src/js/main.js",
@@ -12,14 +16,18 @@ module.exports = function (grunt) {
       },
     },
     uglify: {
+      face: {
+        src: "src/js/faceApp.js",
+        dest: "src/js/faceApp.min.js",
+      },
       index: {
         src: "src/js/main.js",
         dest: "src/js/main.min.js",
       },
       bio: {
-         src: "src/js/bio.js",
-         dest: "src/js/bio.min.js",
-       },
+        src: "src/js/bio.js",
+        dest: "src/js/bio.min.js",
+      },
     },
     cssmin: {
       css: {

@@ -1,15 +1,18 @@
-document.getElementById("face-link").addEventListener("click", function (e) {
+document.getElementById("face-link").addEventListener("click", async function (e) {
   e.stopPropagation();
   e.preventDefault();
-  if (!document.querySelector("#face-loaded")) {
-    loadFaceScript();
-  }
 
   document.getElementById("container3d").style.display = "block";
   document.getElementById("main").classList.add("is-blurred");
   document.getElementById("navbar").classList.add("is-blurred");
   document.getElementById("link-list").classList.add("is-blurred");
   document.getElementById("face-wrapper").classList.add("is-blurred");
+
+  if (!document.querySelector("#face-loaded")) {
+    document.getElementById("lds-wrapper").style.display = "block";
+    await loadFaceScript();
+    document.getElementById("lds-wrapper").style.display = "none";
+  }
 });
 
 document.getElementById("face-close").addEventListener("click", function (e) {
