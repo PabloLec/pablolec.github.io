@@ -48,4 +48,6 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 };
 
-
+$(window).on("load", function () {
+  document.getElementById("header").style.top = "0";
+});

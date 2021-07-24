@@ -120,7 +120,7 @@ section {
     -webkit-box-align: center;
     align-items: center;
     position: fixed;
-    top: -200px;
+    top: -150px;
     z-index: 11;
     width: 100%;
     height: var(--nav-height);
@@ -130,8 +130,6 @@ section {
     pointer-events: auto !important;
     user-select: auto !important;
     transition: top 1s;
-    animation: slideDown 0.5s forwards;
-    -webkit-animation: slideDown 0.5s forwards;
   }
 
   #navbar {
@@ -178,7 +176,7 @@ section {
     -webkit-box-align: center;
     align-items: center;
     position: fixed;
-    top: -200px;
+    top: -150px;
     z-index: 11;
     width: 100%;
     height: var(--nav-height);
@@ -188,8 +186,6 @@ section {
     pointer-events: auto !important;
     user-select: auto !important;
     transition: top 1s;
-    animation: slideDown 0.5s forwards;
-    -webkit-animation: slideDown 0.5s forwards;
   }
 
   #navbar {
@@ -211,6 +207,7 @@ section {
   }
 
   #resume-button {
+    display: none;
     color: var(--green);
     background-color: transparent;
     border: 1px solid var(--green);
