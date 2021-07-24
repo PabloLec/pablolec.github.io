@@ -1,0 +1,38 @@
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100;
+  }
+}
+
+#whoami {
+  opacity: 0;
+  -webkit-animation: slideInFromLeft 2s ease 3.5s forwards;
+  -moz-animation: slideInFromLeft 2s ease 3.5s forwards;
+  -o-animation: slideInFromLeft 2s ease 3.5s forwards;
+  animation: slideInFromLeft 2s ease 3.5s forwards;
+}
+
+#bio {
+  text-align: left;
+  line-height: 1.75;
+}
+
+.bio-category {
+  color: var(--green);
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  cursor: pointer;
+}
+
+#bio-cat2,
+#bio-cat3 {
+  display: none;
+}
+
+.bio-link {
+  text-decoration: underline dotted var(--green);
+}

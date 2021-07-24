@@ -3,16 +3,34 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON("package.json"),
     concat: {
       face: {
-        src: ["src/js/three.js", "src/js/anime.js", "src/js/runtime.js", "src/js/face.js"],
+        src: ["src/js/face/three.js", "src/js/face/anime.js", "src/js/face/runtime.js", "src/js/face/face.js"],
         dest: "src/js/faceApp.js",
       },
-      index: {
-        src: ["src/js/jquery.min.js", "src/js/index.js"],
-        dest: "src/js/main.js",
+      first: {
+        src: ["src/js/first/jquery.min.js", "src/js/first/index.js"],
+        dest: "src/js/first.js",
       },
-      bio: {
-        src: ["src/js/nameAnim.js", "src/js/typewriter.js", "src/js/writeBio.js"],
-        dest: "src/js/bio.js",
+      end: {
+        src: [
+          "src/js/end/typewriter.js",
+          "src/js/end/writeBio.js",
+          "src/js/end/faceModal.js",
+          "src/js/end/nameAnim.js",
+        ],
+        dest: "src/js/end.js",
+      },
+      css: {
+        src: [
+          "src/css/fonts.css",
+          "src/css/index.css",
+          "src/css/navbar.css",
+          "src/css/sidebars.css",
+          "src/css/name.css",
+          "src/css/bio.css",
+          "src/css/projects.css",
+          "src/css/contact.css",
+        ],
+        dest: "src/css/main.css",
       },
     },
     uglify: {
@@ -20,19 +38,19 @@ module.exports = function (grunt) {
         src: "src/js/faceApp.js",
         dest: "src/js/faceApp.min.js",
       },
-      index: {
-        src: "src/js/main.js",
-        dest: "src/js/main.min.js",
+      first: {
+        src: "src/js/first.js",
+        dest: "src/js/first.min.js",
       },
-      bio: {
-        src: "src/js/bio.js",
-        dest: "src/js/bio.min.js",
+      end: {
+        src: "src/js/end.js",
+        dest: "src/js/end.min.js",
       },
     },
     cssmin: {
       css: {
-        src: "src/css/index.css",
-        dest: "src/css/index.min.css",
+        src: "src/css/main.css",
+        dest: "src/css/main.min.css",
       },
     },
     watch: {
