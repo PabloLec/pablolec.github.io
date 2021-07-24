@@ -1089,6 +1089,8 @@ a:hover {
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     position: relative;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    margin-top: 5rem;
   }
 }
 @media all and (max-width: 768px) {
@@ -1100,7 +1102,25 @@ a:hover {
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     position: relative;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    margin-top: 3rem;
   }
+}
+
+#mailWrapper {
+  display: inline-flex;
+  align-self: center;
+}
+
+#sendMail {
+  display: inline-flex;
+  align-self: center;
+}
+
+#sendMail svg {
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
 }
 
 #mail:before,
@@ -1130,23 +1150,6 @@ a:hover {
   opacity: 1;
   width: 50%;
 }
-
-#mailAt {
-  transition: 0.4s ease-in-out;
-  -webkit-transition: 0.4s ease-in-out;
-  -moz-transition: 0.4s ease-in-out;
-  -ms-transition: 0.4s ease-in-out;
-  -o-transition: 0.4s ease-in-out;
-}
-
-#mailAt:hover {
-  -webkit-transform: rotate(15deg);
-  -moz-transform: rotate(15deg);
-  -o-transform: rotate(15deg);
-  -ms-transform: rotate(15deg);
-  transform: rotate(15deg);
-}
-
 #lds-wrapper {
   display: flex;
   justify-content: center;
