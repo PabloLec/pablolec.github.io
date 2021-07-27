@@ -55,10 +55,12 @@
 .question {
   background: #eee;
   float: left;
+  max-width: 80%;
 }
 
 .answer {
   float: right;
+  max-width: 80%;
   background: #0084ff;
   color: #fff;
 }
