@@ -87,7 +87,7 @@
 }
 
 .project-body-right .project-tech-list {
-  justify-content: right;
+  flex-direction: row-reverse;
 }
 
 .project-tech-list {
