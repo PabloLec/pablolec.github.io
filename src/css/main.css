@@ -1073,9 +1073,19 @@ a:hover {
   animation: slideInFromLeft 2s ease 3.5s forwards;
 }
 
-#bio {
-  text-align: left;
-  line-height: 1.75;
+@media all and (min-width: 768px) {
+  #bio {
+    text-align: left;
+    line-height: 1.75;
+  }
+}
+
+@media all and (max-width: 768px) {
+  #bio {
+    text-align: left;
+    line-height: 1.75;
+    font-size: var(--fz-md);
+  }
 }
 
 .bio-category {
@@ -1171,11 +1181,12 @@ a:hover {
   }
 }
 
-@media all and (min-width: 768px) {
+@media all and (max-width: 768px) {
   .question-line {
     padding-left: 1rem;
-    width: 80%;
+    width: 90%;
     cursor: pointer;
+    margin-top: 0.5rem;
   }
 }
 
@@ -1243,16 +1254,32 @@ a:hover {
   font-size: clamp(24px, 5vw, 28px);
 }
 
-.project-desc {
-  box-shadow: 0 10px 30px -15px var(--navy-shadow);
-  transition: var(--transition);
-  position: relative;
-  z-index: 2;
-  padding: 25px;
-  border-radius: var(--border-radius);
-  background-color: var(--light-navy);
-  color: var(--light-slate);
-  font-size: var(--fz-lg);
+@media all and (min-width: 768px) {
+  .project-desc {
+    box-shadow: 0 10px 30px -15px var(--navy-shadow);
+    transition: var(--transition);
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    background-color: var(--light-navy);
+    color: var(--light-slate);
+    font-size: var(--fz-lg);
+  }
+}
+
+@media all and (max-width: 768px) {
+  .project-desc {
+    box-shadow: 0 10px 30px -15px var(--navy-shadow);
+    transition: var(--transition);
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    background-color: var(--light-navy);
+    color: var(--light-slate);
+    font-size: var(--fz-sm);
+  }
 }
 
 .project-body-right .project-tech-list {
@@ -1495,7 +1522,6 @@ a:hover {
     width: 100%;
     font-weight: 800;
     font-size: 3rem;
-    cursor: pointer;
     transition: all 0.2s ease-in-out;
     position: relative;
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
@@ -1508,7 +1534,6 @@ a:hover {
     width: 100%;
     font-weight: 800;
     font-size: 4vw;
-    cursor: pointer;
     transition: all 0.2s ease-in-out;
     position: relative;
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
@@ -1524,6 +1549,7 @@ a:hover {
 #sendMail {
   display: inline-flex;
   align-self: center;
+  cursor: pointer;
 }
 
 #sendMail svg {

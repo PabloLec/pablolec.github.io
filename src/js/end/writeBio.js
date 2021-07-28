@@ -26,7 +26,9 @@ getIGDate();
 window.onclick = function (event) {
   if (!event.target.matches("#question-menu") || !event.target.matches("#dropdown-menu")) {
     var dropdown = document.getElementById("dropdown-menu");
-    dropdown.style.display = "none";
+    if (dropdown) {
+      dropdown.style.display = "none";
+    }
   }
 };
 
@@ -45,12 +47,12 @@ const responses = [
 <br/><br/>Puis, de nouveau 3 ans sur le <a href="https://fr.wikipedia.org/wiki/Forbin_(fr%C3%A9gate0)" class="bio-link" target="_blank">Forbin</a>, cette fois dans ce qu'on appelle la Guerre Électronique, il s'agit en gros d'intercepter toute sorte de signaux électromagnétiques (ex: un radar, une communication radio, un flux vidéo, etc.) et de l'identifier, le démoduler et/ou le déchiffrer.
 <br/><br/>Ces années m'ont amené à effectuer de très nombreuses missions des États-Unis aux Émirats arabes unis en passant par l'Afrique de l'Ouest ou encore le Canal de Syrie.
 <br/>Je totalise plus de 500 jours de mer dont plus de 150 en zone de guerre.
-<br/>Un de mes points forts : Je n'ai pas le mal de mer.
+<br/>Un de mes points forts : Je n'ai pas le mal de mer. &#x1F912;
 <br/><br/>Enfin, j'ai passé 3 ans à terre, affecté dans le milieu du renseignement.`,
 
   `C'est relativement récent, depuis 2018.
 <br/>J'ai ceci dit toujours été "tech savvy", je me souviens en 2004 faire des sites hébergés sur  <a href="https://en.wikipedia.org/wiki/MSN_Groups" class="bio-link" target="_blank">MSN Groups</a>.
-<br/><br/>Mark Zuckerberg a créé Facebook, la même année, je créais un fan site d'Eminem, il a seulement eu plus de chance.`,
+<br/><br/>Mark Zuckerberg a créé Facebook, la même année, je créais un fan site d'Eminem, il a seulement eu plus de chance. &#x1F937;&#x1F3FB;`,
 
   `Côté language, j'ai démarré l'apprentissage de la programmation logicielle avec Python et c'est toujours mon langage de prédilection aujourd'hui.
 <br/>Entre-temps, j'ai eu l'occasion de pratiquer d'autres langages comme le Shell, le Rust, le Go et surtout le JavaScript/TypeScript, particulièrement avec NodeJS.
@@ -71,7 +73,8 @@ const responses = [
   `Pas encore.
 <br/>Durant ma formation, effectuée en parallèle de mon activité militaire, il m'était impossible de me diriger vers l'alternance ou même un stage.
 <br/>J'ai cependant pris soin de me renseigner sur la réalité du dev en entreprise. Que ce soit par de la connaissance générale via Internet ou de l'expérience réelle via mes connaissances travaillant dans le domaine.
-<br/><br/>Je précise également que j'ai eu l'occasion de développer pour la Marine Nationale. Je ne peux malheureusement pas détailler ici, je le ferais avec plaisir en privé, mais il s'agit grossièrement d'un logiciel permettant de grandement faciliter le travail de mon unité de renseignement. Par ailleurs, pour cela je me suis vu décerner une lettre de félicitations du Ministère des Armées.
+<br/><br/>Je précise également que j'ai eu l'occasion de développer pour la Marine Nationale. Je ne peux malheureusement pas détailler ici, je le ferais avec plaisir en privé, mais il s'agit grossièrement d'un logiciel permettant de grandement faciliter le travail de mon unité de renseignement.
+<br/>Par ailleurs, pour cela je me suis vu décerner une lettre de félicitations du Ministère des Armées. &#x1F396;
 <br/><br/>Enfin, je prépare actuellement la certification de Professional Scrum Master 1.`,
 ];
 
@@ -81,7 +84,7 @@ function addQuestionMenu() {
   var messages = document.getElementById("messages");
 
   if (questionsList.length == 0) {
-    messages.insertAdjacentHTML("beforeend", `<li class="message question">Ok.</li>`);
+    messages.insertAdjacentHTML("beforeend", `<li class="message question">Ok. &#x1F44D;</li>`);
     return;
   }
   messages.insertAdjacentHTML(

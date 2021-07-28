@@ -17,9 +17,19 @@
   animation: slideInFromLeft 2s ease 3.5s forwards;
 }
 
-#bio {
-  text-align: left;
-  line-height: 1.75;
+@media all and (min-width: 768px) {
+  #bio {
+    text-align: left;
+    line-height: 1.75;
+  }
+}
+
+@media all and (max-width: 768px) {
+  #bio {
+    text-align: left;
+    line-height: 1.75;
+    font-size: var(--fz-md);
+  }
 }
 
 .bio-category {
@@ -115,11 +125,12 @@
   }
 }
 
-@media all and (min-width: 768px) {
+@media all and (max-width: 768px) {
   .question-line {
     padding-left: 1rem;
-    width: 80%;
+    width: 90%;
     cursor: pointer;
+    margin-top: 0.5rem;
   }
 }
 
