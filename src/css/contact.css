@@ -12,7 +12,6 @@
     width: 100%;
     font-weight: 800;
     font-size: 3rem;
-    cursor: pointer;
     transition: all 0.2s ease-in-out;
     position: relative;
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
@@ -25,7 +24,6 @@
     width: 100%;
     font-weight: 800;
     font-size: 4vw;
-    cursor: pointer;
     transition: all 0.2s ease-in-out;
     position: relative;
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
@@ -41,6 +39,7 @@
 #sendMail {
   display: inline-flex;
   align-self: center;
+  cursor: pointer;
 }
 
 #sendMail svg {

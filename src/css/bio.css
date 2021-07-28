@@ -17,9 +17,19 @@
   animation: slideInFromLeft 2s ease 3.5s forwards;
 }
 
-#bio {
-  text-align: left;
-  line-height: 1.75;
+@media all and (min-width: 768px) {
+  #bio {
+    text-align: left;
+    line-height: 1.75;
+  }
+}
+
+@media all and (max-width: 768px) {
+  #bio {
+    text-align: left;
+    line-height: 1.75;
+    font-size: var(--fz-md);
+  }
 }
 
 .bio-category {
@@ -94,7 +104,7 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  border-radius: 5px;
+  border-radius: 10px;
   color: var(--light-slate);
 }
 
@@ -107,8 +117,23 @@
   background-color: #454a4d;
 }
 
-.question-line {
-  padding-left: 1rem;
-  width: 100%;
-  cursor: pointer;
+@media all and (min-width: 768px) {
+  .question-line {
+    padding-left: 1rem;
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .question-line {
+    padding-left: 1rem;
+    width: 90%;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+}
+
+.question-line:before {
+  content: "• ";
 }

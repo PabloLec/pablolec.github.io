@@ -58,16 +58,32 @@
   font-size: clamp(24px, 5vw, 28px);
 }
 
-.project-desc {
-  box-shadow: 0 10px 30px -15px var(--navy-shadow);
-  transition: var(--transition);
-  position: relative;
-  z-index: 2;
-  padding: 25px;
-  border-radius: var(--border-radius);
-  background-color: var(--light-navy);
-  color: var(--light-slate);
-  font-size: var(--fz-lg);
+@media all and (min-width: 768px) {
+  .project-desc {
+    box-shadow: 0 10px 30px -15px var(--navy-shadow);
+    transition: var(--transition);
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    background-color: var(--light-navy);
+    color: var(--light-slate);
+    font-size: var(--fz-lg);
+  }
+}
+
+@media all and (max-width: 768px) {
+  .project-desc {
+    box-shadow: 0 10px 30px -15px var(--navy-shadow);
+    transition: var(--transition);
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    background-color: var(--light-navy);
+    color: var(--light-slate);
+    font-size: var(--fz-sm);
+  }
 }
 
 .project-body-right .project-tech-list {
