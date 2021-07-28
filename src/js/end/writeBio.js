@@ -166,6 +166,8 @@ async function writeAnswer(questionNum) {
 
   var lines = answer.split("<br/><br/>");
 
+  await new Promise((r) => setTimeout(r, 1200));
+
   for (const line of lines) {
     addTyping();
     await new Promise((r) => setTimeout(r, 2000));
