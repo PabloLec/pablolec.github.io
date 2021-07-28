@@ -94,7 +94,7 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  border-radius: 5px;
+  border-radius: 10px;
   color: var(--light-slate);
 }
 
@@ -107,8 +107,22 @@
   background-color: #454a4d;
 }
 
-.question-line {
-  padding-left: 1rem;
-  width: 100%;
-  cursor: pointer;
+@media all and (min-width: 768px) {
+  .question-line {
+    padding-left: 1rem;
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .question-line {
+    padding-left: 1rem;
+    width: 80%;
+    cursor: pointer;
+  }
+}
+
+.question-line:before {
+  content: "• ";
 }
