@@ -22,169 +22,160 @@ function calculateAge() {
 calculateAge();
 getIGDate();
 
-function typeBio1() {
-  let bio = document.getElementById("bio1");
+// - - - - - - - - - - - - - - - - - - - - -
 
-  var typewriter = new Typewriter(bio, {
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+  if (!event.target.matches("#question-menu") || !event.target.matches("#dropdown-menu")) {
+    var dropdown = document.getElementById("dropdown-menu");
+    dropdown.style.display = "none";
+  }
+};
+
+const questions = [
+  `Qu'est-ce que tu as fait de ta vie ?`,
+  `Depuis quand tu codes ?`,
+  `Quelles technologies tu maîtrises ?`,
+  `Quelle est ta formation ?`,
+  `Bon, et quelle serait ta compétence ?`,
+  `Tu as déjà eu une expérience pro dans le dev ?`,
+];
+const responses = [
+  `Je me suis engagé dans la Marine Nationale en tant que sous-officier à 18 ans après avoir passé un Bac S.
+<br/>Ma spécialité, du moins au début, était l'exploitation et la maintenance des radars.
+<br/>Dans ce cadre, j'ai passé 3 ans à bord de l'<a href="https://fr.wikipedia.org/wiki/Enseigne_de_vaisseau_Jacoubet" class="bio-link" target="_blank">Enseigne de vaisseau Jacoubet</a>.
+<br/><br/>Puis, de nouveau 3 ans sur le <a href="https://fr.wikipedia.org/wiki/Forbin_(fr%C3%A9gate0)" class="bio-link" target="_blank">Forbin</a>, cette fois dans ce qu'on appelle la Guerre Électronique, il s'agit en gros d'intercepter toute sorte de signaux électromagnétiques (ex: un radar, une communication radio, un flux vidéo, etc.) et de l'identifier, le démoduler et/ou le déchiffrer.
+<br/><br/>Ces années m'ont amené à effectuer de très nombreuses missions des États-Unis aux Émirats arabes unis en passant par l'Afrique de l'Ouest ou encore le Canal de Syrie.
+<br/>Je totalise plus de 500 jours de mer dont plus de 150 en zone de guerre.
+<br/>Un de mes points forts : Je n'ai pas le mal de mer.
+<br/><br/>Enfin, j'ai passé 3 ans à terre, affecté dans le milieu du renseignement.`,
+
+  `C'est relativement récent, depuis 2018.
+<br/>J'ai ceci dit toujours été "tech savvy", je me souviens en 2004 faire des sites hébergés sur  <a href="https://en.wikipedia.org/wiki/MSN_Groups" class="bio-link" target="_blank">MSN Groups</a>.
+<br/><br/>Mark Zuckerberg a créé Facebook, la même année, je créais un fan site d'Eminem, il a seulement eu plus de chance.`,
+
+  `Côté language, j'ai démarré l'apprentissage de la programmation logicielle avec Python et c'est toujours mon langage de prédilection aujourd'hui.
+<br/>Entre-temps, j'ai eu l'occasion de pratiquer d'autres langages comme le Shell, le Rust, le Go et surtout le JavaScript/TypeScript, particulièrement avec NodeJS.
+<br/><br/>Évidemment, cela m'a amené à utiliser de nombreux frameworks. Du pur front-end, comme vous pouvez le voir ici-même, comme le back-end le plus obscur qui égraine mon GitHub et mes projets persos.
+<br/><br/>Mon OS de tous les jours est Linux, je le pratique sous toutes ses formes, du plus simple avec Ubuntu au plus minimal avec divers devices IoT.`,
+
+  `Ma formation s'est faite de manière autodidacte et continue sur plusieurs années.
+<br/>Cela peut avoir une connotation négative à l'oreille de certains, mais je tiens à confirmer qu'il s'agit plutôt d'un gage de passion et d'obstination.
+<br/><br/>Plus récemment, j'ai suivi une formation diplômante via OpenClassrooms et son parcours "Développeur d'application - Python".
+<br/>Cette formation m'a appris en particulier l'aspect professionnel du développement. La prise en compte de besoins clients, le respect du cahier des charges et l'agilité.
+<br/><br/>Par ailleurs, j'ai fréquemment contribué à divers projets open source. Pour en savoir plus, je vous invite à consulter mon GitHub.`,
+
+  `Si je devais résumer ma réelle compétence, c'est la curiosité et le désir de connaissance. J'aime la nouveauté et je ne rechigne pas devant la difficulté.
+<br/>Je ne sais qu'une chose, c'est que je n'en connais pas assez.
+<br/><br/>C'est donc avec intérêt que j'écoute et apprends, et avec ce même intérêt j'aime partager mes connaissances et rendre intelligible mon travail.
+<br/>Dans ma vie professionnelle, j'ai naturellement été un élément moteur, j'aime proposer, innover et faire plus, faire mieux.`,
+
+  `Pas encore.
+<br/>Durant ma formation, effectuée en parallèle de mon activité militaire, il m'était impossible de me diriger vers l'alternance ou même un stage.
+<br/>J'ai cependant pris soin de me renseigner sur la réalité du dev en entreprise. Que ce soit par de la connaissance générale via Internet ou de l'expérience réelle via mes connaissances travaillant dans le domaine.
+<br/><br/>Je précise également que j'ai eu l'occasion de développer pour la Marine Nationale. Je ne peux malheureusement pas détailler ici, je le ferais avec plaisir en privé, mais il s'agit grossièrement d'un logiciel permettant de grandement faciliter le travail de mon unité de renseignement. Par ailleurs, pour cela je me suis vu décerner une lettre de félicitations du Ministère des Armées.
+<br/><br/>Enfin, je prépare actuellement la certification de Professional Scrum Master 1.`,
+];
+
+var questionsList = questions;
+
+function addQuestionMenu() {
+  var messages = document.getElementById("messages");
+
+  if (questionsList.length == 0) {
+    messages.insertAdjacentHTML("beforeend", `<li class="message question">Ok.</li>`);
+    return;
+  }
+  messages.insertAdjacentHTML(
+    "beforeend",
+    `<li class="message question" id="question-menu">Posez moi une question !
+<div id='dropdown-menu'></div></li>`
+  );
+
+  var menu = document.getElementById("question-menu");
+
+  var dropdown = document.getElementById("dropdown-menu");
+
+  for (const [i, q] of questions.entries()) {
+    if (!questionsList.includes(q)) {
+      continue;
+    }
+    content = `<a class="question-line" id="q` + i + `">` + q + `</a>`;
+    dropdown.insertAdjacentHTML("beforeend", content);
+    document.getElementById("q" + i).addEventListener("click", function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      menu.removeAttribute("id");
+      menu.innerHTML = "";
+      askQuestion(i, menu);
+    });
+  }
+
+  menu.addEventListener("click", function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+    var dropdown = document.getElementById("dropdown-menu");
+    dropdown.style.display = "block";
+  });
+}
+
+function askQuestion(questionNum, menu) {
+  writeQuestion(questionNum, menu);
+}
+
+function writeQuestion(questionNum, menu) {
+  var typewriter = new Typewriter(menu, {
     loop: false,
-    delay: 16,
+    delay: 35,
   });
 
-  let content = `Je suis devenu militaire à 18 ans après avoir passé un Bac S, je me suis engagé dans la Marine Nationale en tant que sous-officier.
-	<br/><br/>Je me suis spécialisé, du moins au début, dans les radars. 
-	<br/>Puis, dans ce qu'on appelle la Guerre Électronique, il s'agit en gros d'intercepter toutes sortes de signaux électromagnétiques (ex: un radar, une communication radio, un flux vidéo, etc.) et de l'exploiter, c'est-à-dire l'identifier et dans la mesure du possible le démoduler et/ou le déchiffrer.
-	<br/>Enfin, j'ai travaillé quelques années dans le renseignement.
-
-	<br/><br/>J'ai très tôt eu des équipes à gérer et j'ai toujours eu à coeur de former mes équipiers de manière efficace et optimale.
-	<br/>J'ai passé 3 ans dans l'équipage de l'<a href="https://fr.wikipedia.org/wiki/Enseigne_de_vaisseau_Jacoubet" class="bio-link" target="_blank">Enseigne de vaisseau Jacoubet</a> puis de nouveau 3 ans sur le <a href="https://fr.wikipedia.org/wiki/Forbin_(fr%C3%A9gate0)" class="bio-link" target="_blank">Forbin</a>.
-	<br/>Ces années m'ont amené à effectuer de très nombreuses missions des États-Unis aux Émirats arabes unis en passant par l'Afrique de l'Ouest ou encore le Canal de Syrie.
-	<br/>Je totalise plus de 500 jours de mer dont plus de 150 en zone de guerre.
-	<br/>Un de mes points forts : Je n'ai pas le mal de mer.
-	`;
-
-  var lines = content.split("<br/>");
-
-  lines.forEach(function (line, index) {
-    if (line.includes(",")) {
-      var parts = line.split(",");
-      parts.forEach(function (part, index) {
-        typewriter.typeString(part);
-        if (index < parts.length - 1) {
-          typewriter.typeString(",");
-          typewriter.pauseFor(250);
-        }
-      });
-    } else {
-      typewriter.typeString(line);
-    }
-
-    typewriter.typeString("<br/>");
-    if (line.length > 0) {
-      typewriter.pauseFor(500);
-    }
-  });
+  typewriter.typeString(questions[questionNum]);
 
   typewriter.start();
   typewriter.callFunction(() => {
-    document.getElementById("bio-cat2").style.display = "block";
+    typewriter.stop();
+    for (const cursor of document.getElementsByClassName("Typewriter__cursor")) {
+      cursor.style.display = "none";
+    }
+
+    writeAnswer(questionNum);
   });
 }
 
-function typeBio2() {
-  let bio = document.getElementById("bio2");
-
-  var typewriter = new Typewriter(bio, {
-    loop: false,
-    delay: 16,
-  });
-
-  let content = `Et bien, il n'y en a pas beaucoup effectivement.
-	<br/>J'ai ceci dit toujours été "tech savvy", je me souviens en 2004 faire des sites hébergés sur <a href="https://en.wikipedia.org/wiki/MSN_Groups" class="bio-link" target="_blank">MSN Groups </a>. Mark Zuckerberg a créé Facebook, la même année, je créais un fan site d'Eminem, il a seulement eu plus de chance.
-	<br/>Plus récemment, et de manière un peu plus sérieuse, j'ai eu l'occasion d'allier programmation et mon travail du quotidien. Et ce, dans mon affectation renseignement, chose sur laquelle je ne peux m'étaler ici, je peux cependant détailler en privé !
-	`;
-
-  var lines = content.split("<br/>");
-
-  lines.forEach(function (line, index) {
-    if (line.includes(",")) {
-      var parts = line.split(",");
-      parts.forEach(function (part, index) {
-        typewriter.typeString(part);
-        if (index < parts.length - 1) {
-          typewriter.typeString(",");
-          typewriter.pauseFor(250);
-        }
-      });
-    } else {
-      typewriter.typeString(line);
-    }
-
-    typewriter.typeString("<br/>");
-    if (line.length > 0) {
-      typewriter.pauseFor(500);
-    }
-  });
-
-  typewriter.start();
-  typewriter.callFunction(() => {
-    document.getElementById("bio-cat3").style.display = "block";
-  });
+function addAnswerMessage(message) {
+  messBox = document.getElementById("messages");
+  message = `<li class="message answer">` + message + `</li>`;
+  removeTyping();
+  messBox.insertAdjacentHTML("beforeend", message);
 }
 
-function typeBio3() {
-  let bio = document.getElementById("bio3");
-
-  var typewriter = new Typewriter(bio, {
-    loop: false,
-    delay: 16,
-  });
-
-  let content = `J'ai démarré l'apprentissage de la programmation logicielle avec Python, et c'est toujours mon langage de prédilection aujourd'hui.
-	<br/>Entre-temps, j'ai eu l'occasion de pratiquer d'autres langages comme le Java, le Rust, le Go et surtout le JavaScript/TypeScript, particulièrement avec NodeJS.
-	<br/><br/>Ma formation s'est faite de manière autodidacte et continue sur plusieurs années.
-	<br/>Par la suite, j'ai suivi une formation diplômante via OpenClassrooms et son parcours "Développeur d'application - Python".
-	<br/>Cette formation m'a appris en particulier l'aspect professionnel du développement. La prise en compte de besoins clients, le respect du cahier des charges et l'agilité.
-	<br/>Par ailleurs, j'ai fréquemment contribué à divers projets open source. Pour en savoir plus, je vous invite à consulter mon GitHub.
-	<br/><br/>Si je devais résumer ma réelle compétence, c'est la curiosité et le désir de connaissance. J'aime la nouveauté et je ne rechigne pas devant la difficulté.
-	<br/>Je ne sais qu'une chose, c'est que je n'en connais pas assez. 
-	<br/>C'est donc avec intérêt que j'écoute et apprends, et avec ce même intérêt j'aime partager mes connaissances et rendre intelligible mon travail.
-	`;
-
-  var lines = content.split("<br/>");
-
-  lines.forEach(function (line, index) {
-    if (line.includes(",")) {
-      var parts = line.split(",");
-      parts.forEach(function (part, index) {
-        typewriter.typeString(part);
-        if (index < parts.length - 1) {
-          typewriter.typeString(",");
-          typewriter.pauseFor(250);
-        }
-      });
-    } else {
-      typewriter.typeString(line);
-    }
-
-    typewriter.typeString("<br/>");
-    if (line.length > 0) {
-      typewriter.pauseFor(500);
-    }
-  });
-
-  typewriter.start();
+function addTyping() {
+  messBox = document.getElementById("messages");
+  message = `<li class="message answer" id="typing">...</li>`;
+  messBox.insertAdjacentHTML("beforeend", message);
 }
 
-var bioCat1Loaded = false;
-var bioCat2Loaded = false;
-var bioCat3Loaded = false;
+function removeTyping() {
+  typing = document.getElementById("typing");
+  typing.parentNode.removeChild(typing);
+}
 
-document.getElementById("bio-cat1").addEventListener("click", function (e) {
-  e.stopPropagation();
-  e.preventDefault();
-  if (!bioCat1Loaded) {
-    typeBio1();
-    bioCat1Loaded = true;
-  }
-});
+async function writeAnswer(questionNum) {
+  var answer = responses[questionNum];
 
-document.getElementById("bio-cat2").addEventListener("click", function (e) {
-  e.stopPropagation();
-  e.preventDefault();
-  if (!bioCat2Loaded) {
-    typeBio2();
-    bioCat2Loaded = true;
-  }
-});
+  var lines = answer.split("<br/><br/>");
 
-document.getElementById("bio-cat3").addEventListener("click", function (e) {
-  e.stopPropagation();
-  e.preventDefault();
-  if (!bioCat3Loaded) {
-    typeBio3();
-    bioCat3Loaded = true;
+  for (const line of lines) {
+    addTyping();
+    await new Promise((r) => setTimeout(r, 2000));
+    addAnswerMessage(line);
   }
-});
+
+  questionsList = questionsList.filter((e) => e !== questions[questionNum]);
+  addQuestionMenu();
+}
+
+addQuestionMenu();
 
 document.getElementById("face-link").addEventListener("click", async function (e) {
   e.stopPropagation();
