@@ -13,6 +13,7 @@ document.getElementById("face-link").addEventListener("click", async function (e
     await loadFaceScript();
     document.getElementById("lds-wrapper").style.display = "none";
   }
+  _paq.push(["trackEvent", "Click", "Button Click", "Face Modal"]);
 });
 
 document.getElementById("face-close").addEventListener("click", function (e) {
