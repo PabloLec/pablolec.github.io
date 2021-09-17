@@ -35,11 +35,11 @@ window.onclick = function (event) {
 };
 
 const questions = [
-  `Qu'est-ce que tu as fait de ta vie ?`,
+  `Qu'as-tu fait de ta vie ? `,
   `Depuis quand tu codes ?`,
   `Quelles technologies tu maîtrises ?`,
   `Quelle est ta formation ?`,
-  `Bon, et quelle serait ta compétence ?`,
+  `Et quelle serait ta compétence ?`,
   `Tu as déjà eu une expérience pro dans le dev ?`,
 ];
 const responses = [
@@ -56,10 +56,10 @@ const responses = [
 <br/>J'ai ceci dit toujours été "tech savvy", je me souviens en 2004 faire des sites hébergés sur  <a href="https://en.wikipedia.org/wiki/MSN_Groups" class="bio-link" target="_blank">MSN Groups</a>.
 <br/><br/>Mark Zuckerberg a créé Facebook, la même année, je créais un fan site d'Eminem, il a seulement eu plus de chance. &#x1F937;&#x1F3FB;`,
 
-  `Côté language, j'ai démarré l'apprentissage de la programmation logicielle avec Python et c'est toujours mon langage de prédilection aujourd'hui.
+  `Côté langage, j'ai démarré l'apprentissage de la programmation logicielle avec Python et c'est toujours mon langage de prédilection aujourd'hui.
 <br/>Entre-temps, j'ai eu l'occasion de pratiquer d'autres langages comme le Shell, le Rust, le Go et surtout le JavaScript/TypeScript, particulièrement avec NodeJS.
 <br/><br/>Évidemment, cela m'a amené à utiliser de nombreux frameworks. Du pur front-end, comme vous pouvez le voir ici-même, comme le back-end le plus obscur qui égraine mon GitHub et mes projets persos.
-<br/><br/>Mon OS de tous les jours est Linux, je le pratique sous toutes ses formes, du plus simple avec Ubuntu au plus minimal avec divers devices IoT.`,
+<br/><br/>Au passage, mon OS de tous les jours est Linux, je le pratique sous toutes ses formes, du classique Debian-like au plus minimal avec divers devices IoT.`,
 
   `Ma formation s'est faite de manière autodidacte et continue sur plusieurs années.
 <br/>Cela peut avoir une connotation négative à l'oreille de certains, mais je tiens à confirmer qu'il s'agit plutôt d'un gage de passion et d'obstination.
