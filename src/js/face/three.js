@@ -3637,11 +3637,11 @@
         D.get(a) !== f && (D.set(a, f), a.update());
       }
       if (0 < a.version && e.__version !== a.version)
-        if (((f = a.image), void 0 === f))
-          console.warn("THREE.WebGLRenderer: Texture marked for update but image is undefined");
-        else if (!1 === f.complete)
-          console.warn("THREE.WebGLRenderer: Texture marked for update but image is incomplete");
-        else {
+        if (((f = a.image), void 0 === f)) {
+          //pass
+        } else if (!1 === f.complete) {
+          //pass
+        } else {
           z(e, a, b);
           return;
         }
