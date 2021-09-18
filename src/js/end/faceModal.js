@@ -8,11 +8,12 @@ document.getElementById("face-link").addEventListener("click", async function (e
   document.getElementById("link-list").classList.add("is-blurred");
   document.getElementById("face-wrapper").classList.add("is-blurred");
 
-  if (!document.querySelector("#face-loaded")) {
+  while (!document.querySelector("#face-loaded")) {
     document.getElementById("lds-wrapper").style.display = "block";
-    await loadFaceScript();
-    document.getElementById("lds-wrapper").style.display = "none";
+    await new Promise((r) => setTimeout(r, 500));
   }
+  document.getElementById("lds-wrapper").style.display = "none";
+
   _paq.push(["trackEvent", "Click", "Button Click", "Face Modal"]);
 });
 
@@ -37,3 +38,5 @@ async function loadFaceScript() {
     await new Promise((r) => setTimeout(r, 500));
   }
 }
+
+loadFaceScript();
