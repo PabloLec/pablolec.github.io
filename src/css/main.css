@@ -444,9 +444,9 @@ section {
 
 #pleaseWait {
   position: fixed;
-  top: 70%;
+  top: 65%;
   width: 100%;
-  font-size: 2vw;
+  font-size: 50px;
 }
 
 #pleaseWait:after {
@@ -477,7 +477,7 @@ section {
   position: fixed;
   top: 75%;
   width: 100%;
-  font-size: 1.5vw;
+  font-size: 40px;
   animation: longWaitIn 3s;
   animation-delay: 5s;
   animation-fill-mode: forwards;
