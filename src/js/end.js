@@ -119,11 +119,17 @@ function addQuestionMenu() {
     e.preventDefault();
     var dropdown = document.getElementById("dropdown-menu");
     dropdown.style.display = "block";
+    trackQuestion("Menu click");
   });
 }
 
 function askQuestion(questionNum, menu) {
   writeQuestion(questionNum, menu);
+  trackQuestion("Ask Question");
+}
+
+async function trackQuestion(message) {
+  _paq.push(["trackEvent", "Click", "Bio Click", "Bio " + message]);
 }
 
 function writeQuestion(questionNum, menu) {
