@@ -188,6 +188,8 @@ async function writeAnswer(questionNum) {
 
 addQuestionMenu();
 
+var isFaceScriptLoaded = false;
+
 document.getElementById("face-link").addEventListener("click", async function (e) {
   e.stopPropagation();
   e.preventDefault();
@@ -197,6 +199,11 @@ document.getElementById("face-link").addEventListener("click", async function (e
   document.getElementById("navbar").classList.add("is-blurred");
   document.getElementById("link-list").classList.add("is-blurred");
   document.getElementById("face-wrapper").classList.add("is-blurred");
+
+  if (!isFaceScriptLoaded) {
+    isFaceScriptLoaded = true;
+    loadFaceScript();
+  }
 
   while (!document.querySelector("#face-loaded")) {
     document.getElementById("lds-wrapper").style.display = "block";
@@ -229,7 +236,15 @@ async function loadFaceScript() {
   }
 }
 
-loadFaceScript();
+async function autoLoadFaceScript() {
+  await new Promise((resolve) => setTimeout(resolve, 6500));
+  if (!isFaceScriptLoaded) {
+    isFaceScriptLoaded = true;
+    loadFaceScript();
+  }
+}
+
+autoLoadFaceScript();
 
 const spans = document.querySelectorAll('#name-container h1 span');
 
