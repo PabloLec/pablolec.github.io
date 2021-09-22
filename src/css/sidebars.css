@@ -2,7 +2,7 @@
   #link-bar {
     width: 40px;
     position: fixed;
-    bottom: -500px;
+    bottom: -110%;
     left: 40px;
     right: auto;
     z-index: 10;
@@ -50,7 +50,7 @@
   #link-bar {
     width: 20px;
     position: fixed;
-    bottom: -200px;
+    bottom: -110%;
     left: 20px;
     right: auto;
     z-index: 10;
@@ -102,7 +102,7 @@
   #face-bar {
     width: 40px;
     position: fixed;
-    bottom: -500px;
+    bottom: -110%;
     left: auto;
     right: 40px;
     z-index: 10;
@@ -130,6 +130,8 @@
     letter-spacing: 0.1em;
     writing-mode: vertical-rl;
     color: #ccd6f6;
+    animation: shake 15s infinite;
+    -webkit-animation: shake 15s infinite;
   }
 
   #face-wrapper::after {
@@ -146,7 +148,7 @@
   #face-bar {
     width: 20px;
     position: fixed;
-    bottom: -200px;
+    bottom: -110%;
     left: auto;
     right: 20px;
     z-index: 10;
@@ -183,5 +185,17 @@
     height: 45px;
     margin: 0px auto;
     background-color: #233554;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(0px);
+  }
+  2% {
+    transform: translateY(-25px);
+  }
+  4% {
+    transform: translateY(0px);
   }
 }
