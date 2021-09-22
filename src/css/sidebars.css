@@ -2,13 +2,15 @@
   #link-bar {
     width: 40px;
     position: fixed;
-    bottom: -200px;
+    bottom: -500px;
     left: 40px;
     right: auto;
     z-index: 10;
     color: #ccd6f6;
+    animation-delay: 3s;
     animation: slide 1.2s forwards;
     -webkit-animation: slide 1.2s forwards;
+    -webkit-animation-delay: 3s;
   }
 
   #link-bar::after {
@@ -53,8 +55,10 @@
     right: auto;
     z-index: 10;
     color: #ccd6f6;
+    animation-delay: 3s;
     animation: slide 1.2s forwards;
     -webkit-animation: slide 1.2s forwards;
+    -webkit-animation-delay: 3s;
   }
 
   #link-bar::after {
@@ -98,13 +102,15 @@
   #face-bar {
     width: 40px;
     position: fixed;
-    bottom: -200px;
+    bottom: -500px;
     left: auto;
     right: 40px;
     z-index: 10;
     color: #a8b2d1;
+    animation-delay: 3s;
     animation: slide 1.2s forwards;
     -webkit-animation: slide 1.2s forwards;
+    -webkit-animation-delay: 3s;
   }
 
   #face-wrapper {
@@ -145,8 +151,10 @@
     right: 20px;
     z-index: 10;
     color: #a8b2d1;
+    animation-delay: 3s;
     animation: slide 1.2s forwards;
     -webkit-animation: slide 1.2s forwards;
+    -webkit-animation-delay: 3s;
   }
 
   #face-wrapper {

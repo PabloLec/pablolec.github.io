@@ -29,6 +29,7 @@
     pointer-events: auto !important;
     user-select: auto !important;
     transition: top 1s;
+    transition-delay: 2s;
   }
 
   #navbar {
@@ -89,6 +90,7 @@
     pointer-events: auto !important;
     user-select: auto !important;
     transition: top 1s;
+    transition-delay: 2s;
   }
 
   #navbar {

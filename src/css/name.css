@@ -11,6 +11,15 @@
     -o-animation: fadeIn ease 3.5s;
     -ms-animation: fadeIn ease 3.5s;
   }
+
+  #name-container h1 {
+    animation: text-shadow 15s ease-in-out infinite;
+    color: #d8d4cf;
+    font-size: 5em;
+    font-weight: 900;
+    line-height: 1;
+    perspective: 1000px;
+  }
 }
 
 @media all and (max-width: 768px) {
@@ -21,21 +30,21 @@
     width: 80%;
     font: 1.7vw/1.25 "Raleway", sans-serif;
   }
+
+  #name-container h1 {
+    animation: text-shadow-small 15s ease-in-out infinite;
+    color: #d8d4cf;
+    font-size: 5em;
+    font-weight: 900;
+    line-height: 1;
+    perspective: 1000px;
+  }
 }
 
 #name-container {
   justify-content: center;
   padding: 1em;
   width: 100%;
-}
-
-#name-container h1 {
-  animation: text-shadow 15s ease-in-out infinite;
-  color: #d8d4cf;
-  font-size: 5em;
-  font-weight: 900;
-  line-height: 1;
-  perspective: 1000px;
 }
 
 #name-container h1 span {
@@ -169,6 +178,38 @@ a:hover {
 
   70% {
     transform: translateX(20%);
+    text-shadow: 0 -0.0625em 0 #0d7377, 0 -0.125em 0 #14ffec, 0 0.0625em 0 #c2a41e, 0 0.125em 0 #fefc4b;
+  }
+
+  80% {
+    transform: translateX(-15%);
+    text-shadow: 0 0.03125em 0 #0d7377, 0 0.0625em 0 #14ffec, 0 -0.03125em 0 #c2a41e, 0 -0.0625em 0 #fefc4b;
+  }
+
+  90% {
+    transform: translateX(10%);
+    text-shadow: 0 0 0 #0d7377, 0 0 0 #14ffec, 0 0 0 #c2a41e, 0 0 0 #fefc4b;
+  }
+
+  100% {
+    transform: translateX(0);
+    text-shadow: 0 0 0 #0d7377, 0 0 0 #14ffec, 0 0 0 #c2a41e, 0 0 0 #fefc4b;
+  }
+}
+
+@keyframes text-shadow-small {
+  50% {
+    transform: translateX(0);
+    text-shadow: 0 0 0 #0d7377, 0 0 0 #14ffec, 0 0 0 #c2a41e, 0 0 0 #fefc4b;
+  }
+
+  60% {
+    transform: translateX(-30%);
+    text-shadow: 0 0.125em 0 #0d7377, 0 0.25em 0 #14ffec, 0 -0.125em 0 #c2a41e, 0 -0.25em 0 #fefc4b;
+  }
+
+  70% {
+    transform: translateX(10%);
     text-shadow: 0 -0.0625em 0 #0d7377, 0 -0.125em 0 #14ffec, 0 0.0625em 0 #c2a41e, 0 0.125em 0 #fefc4b;
   }
 
