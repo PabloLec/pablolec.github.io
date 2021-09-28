@@ -522,8 +522,8 @@ section {
     filter: none !important;
     pointer-events: auto !important;
     user-select: auto !important;
-    transition: top 1s;
-    transition-delay: 2s;
+    transition: top 0.5s;
+    transition-delay: 2.7s;
   }
 
   #navbar {
@@ -583,8 +583,8 @@ section {
     filter: none !important;
     pointer-events: auto !important;
     user-select: auto !important;
-    transition: top 1s;
-    transition-delay: 2s;
+    transition: top 0.5s;
+    transition-delay: 2.7s;
   }
 
   #navbar {

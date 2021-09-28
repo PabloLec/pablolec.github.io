@@ -50,4 +50,10 @@ window.onscroll = function () {
 
 $(window).on("load", function () {
   document.getElementById("header").style.top = "0";
+  resetHeaderDelay();
 });
+
+async function resetHeaderDelay() {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+  document.getElementById("header").style["transition-delay"] = "0s";
+}
