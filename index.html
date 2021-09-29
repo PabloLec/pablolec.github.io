@@ -15,10 +15,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="src/css/main.min.css" />
 
     <script src="/src/js/first.min.js"></script>
-    <!-- Matomo -->
     <script async>
       var _paq = (window._paq = window._paq || []);
-      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
       _paq.push(["trackPageView"]);
       _paq.push(["enableLinkTracking"]);
       (function () {
@@ -29,11 +27,10 @@
           g = d.createElement("script"),
           s = d.getElementsByTagName("script")[0];
         g.async = true;
-        g.src = u + "matomo.js";
+        g.src = "/src/js/omotam.min.js";
         s.parentNode.insertBefore(g, s);
       })();
     </script>
-    <!-- End Matomo Code -->
   </head>
 
   <body>
