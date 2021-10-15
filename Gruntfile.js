@@ -33,6 +33,16 @@ module.exports = function (grunt) {
         dest: "src/css/main.css",
       },
     },
+    purgecss: {
+      main: {
+        options: {
+          content: ["src/index.html", "src/js/**/*.js"],
+        },
+        files: {
+          "src/css/main.css.purged": ["src/css/main.css"],
+        },
+      },
+    },
     uglify: {
       face: {
         src: "src/js/faceApp.js",
@@ -53,7 +63,7 @@ module.exports = function (grunt) {
     },
     cssmin: {
       css: {
-        src: "src/css/main.css",
+        src: "src/css/main.css.purged",
         dest: "src/css/main.min.css",
       },
     },
@@ -86,6 +96,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks("grunt-contrib-htmlmin");
   grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-purgecss");
 
-  grunt.registerTask("default", ["concat", "uglify", "cssmin", "htmlmin", "watch"]);
+  grunt.registerTask("default", ["concat", "purgecss", "uglify", "cssmin", "htmlmin", "watch"]);
 };
