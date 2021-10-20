@@ -50,7 +50,7 @@ const responses = [
 <br/>Un de mes points forts : Je n'ai pas le mal de mer. &#x1F912;
 <br/><br/>Enfin, j'ai passé 3 ans à terre, affecté dans le milieu du renseignement.`,
 
-  `C'est relativement récent, depuis 2018.
+  `J'ai plongé dans le monde de la programmation en 2018.
 <br/>J'ai ceci dit toujours été "tech savvy", je me souviens en 2004 faire des sites hébergés sur  <a href="https://en.wikipedia.org/wiki/MSN_Groups" class="bio-link" target="_blank">MSN Groups</a>.
 <br/><br/>Mark Zuckerberg a créé Facebook, la même année, je créais un fan site d'Eminem, il a seulement eu plus de chance. &#x1F937;&#x1F3FB;`,
 
