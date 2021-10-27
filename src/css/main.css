@@ -549,7 +549,6 @@ section {
   }
 
   #resume-button {
-    display: none;
     color: var(--green);
     background-color: transparent;
     border: 1px solid var(--green);
@@ -606,7 +605,6 @@ section {
   }
 
   #resume-button {
-    display: none;
     color: var(--green);
     background-color: transparent;
     border: 1px solid var(--green);

@@ -55,7 +55,6 @@
   }
 
   #resume-button {
-    display: none;
     color: var(--green);
     background-color: transparent;
     border: 1px solid var(--green);
@@ -112,7 +111,6 @@
   }
 
   #resume-button {
-    display: none;
     color: var(--green);
     background-color: transparent;
     border: 1px solid var(--green);
