@@ -9,9 +9,13 @@ module.exports = function (grunt) {
       },
     },
     concat: {
-      js: {
-        src: ["src/js/main.js"],
-        dest: "build/js/main.js.concat.tmp",
+      onLoad: {
+        src: ["src/js/onLoad/*.js"],
+        dest: "build/js/onload.js.concat.tmp",
+      },
+      afterRender: {
+        src: ["src/js/afterRender/*.js"],
+        dest: "build/js/afterRender.js.concat.tmp",
       },
       less: {
         src: ["src/less/*.less"],
@@ -40,25 +44,19 @@ module.exports = function (grunt) {
         src: "build/css/main.css.build.tmp",
       },
     },
-    purgecss: {
-      main: {
-        options: {
-          content: ["src/html/*.html", "src/js/**/*.js"],
-        },
-        files: {
-          "build/css/main.css.purge.tmp": ["build/css/main.css.build.tmp"],
-        },
-      },
-    },
     uglify: {
-      js: {
-        src: "build/js/main.js.concat.tmp",
-        dest: "build/js/main.js",
+      onLoad: {
+        src: "build/js/onload.js.concat.tmp",
+        dest: "build/js/onload.js",
+      },
+      afterRender: {
+        src: "build/js/afterRender.js.concat.tmp",
+        dest: "build/js/afterRender.js",
       },
     },
     cssmin: {
       css: {
-        src: "build/css/main.css.purge.tmp",
+        src: "build/css/main.css.build.tmp",
         dest: "build/css/main.css",
       },
     },
@@ -91,7 +89,7 @@ module.exports = function (grunt) {
     watch: {
       scripts: {
         files: ["src/**/*", "src/**/**/*"],
-        tasks: ["bake", "concat", "less", "postcss", "purgecss", "uglify", "cssmin", "htmlmin", "clean"],
+        tasks: ["bake", "concat", "less", "postcss", "uglify", "cssmin", "htmlmin", "clean"],
         options: {
           spawn: false,
         },
@@ -104,7 +102,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks("grunt-contrib-htmlmin");
   grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks("grunt-purgecss");
   grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks("grunt-http-server");
   grunt.loadNpmTasks("grunt-postcss");
@@ -116,7 +113,6 @@ module.exports = function (grunt) {
     "concat",
     "less",
     "postcss",
-    "purgecss",
     "uglify",
     "cssmin",
     "htmlmin",

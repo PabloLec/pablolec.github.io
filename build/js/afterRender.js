@@ -1,0 +1,1 @@
+classList=["bg-hero-lips","bg-hero-bank-note","bg-hero-signal","bg-hero-yyy"],768<window.screen.width&&classList.push("bg-hero-circuit-board","bg-hero-lines-in-motion"),document.getElementById("name-hero").className=classList[Math.floor(Math.random()*classList.length)];

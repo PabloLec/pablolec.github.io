@@ -1,20 +1,6 @@
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: normal;
-  src: url("/src/fonts/montserrat/Montserrat-Medium.ttf");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: bold;
-  src: url("/src/fonts/montserrat/Montserrat-Black.ttf");
-}
-
 #name {
   font-family: "Montserrat";
-  font-weight: bold;
+  font-weight: 900;
   color: @color-primary;
   text-align: center;
 }
@@ -29,36 +15,38 @@
   letter-spacing: 0;
   display: block;
   margin: 0 auto;
-  background-size: 50px 50px;
   background-color: @color-primary;
-  background-image: linear-gradient(
-    135deg,
-    @color-primary-focus 25%,
-    transparent 25%,
-    transparent 50%,
-    @color-primary-focus 50%,
-    @color-primary-focus 75%,
-    transparent 75%,
-    transparent
-  );
   background-clip: text;
-
-  /* Animate Background Image */
-
+  background-size: 50px;
   -webkit-text-fill-color: transparent;
   animation: background-loop 20s linear infinite;
-
-  /* Activate hardware acceleration for smoother animations */
-
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
+  will-change: background-position;
 }
 
 @keyframes background-loop {
   0% {
     background-position: 0% 50%;
   }
-  100% {
+  50% {
     background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// XL
+@media screen and (min-width: 1280px) {
+  #name p span {
+    background-size: 100px;
+  }
+}
+
+// LG
+@media screen and (min-width: 1024px) {
+  #name p span {
+    background-size: 80;
   }
 }
