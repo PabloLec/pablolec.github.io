@@ -1,23 +1,52 @@
 module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
+    bake: {
+      build: {
+        files: {
+          "build/html/index.html": "src/html/index.html",
+        },
+      },
+    },
     concat: {
       js: {
         src: ["src/js/main.js"],
         dest: "build/js/main.js.concat.tmp",
       },
-      css: {
-        src: ["src/css/main.css"],
-        dest: "build/css/main.css.concat.tmp",
+      less: {
+        src: ["src/less/*.less"],
+        dest: "build/css/main.less.concat.tmp",
+      },
+    },
+    less: {
+      development: {
+        options: {
+          compress: true,
+          yuicompress: true,
+          optimization: 2,
+          sourcemap: true,
+        },
+        files: {
+          "build/css/main.css.build.tmp": "build/css/main.less.concat.tmp",
+        },
+      },
+    },
+    postcss: {
+      options: {
+        map: true,
+        processors: [require("tailwindcss")(), require("autoprefixer")()],
+      },
+      dist: {
+        src: "build/css/main.css.build.tmp",
       },
     },
     purgecss: {
       main: {
         options: {
-          content: ["src/index.html", "src/js/**/*.js"],
+          content: ["src/html/*.html", "src/js/**/*.js"],
         },
         files: {
-          "build/css/main.css.purge.tmp": ["build/css/main.css.concat.tmp"],
+          "build/css/main.css.purge.tmp": ["build/css/main.css.build.tmp"],
         },
       },
     },
@@ -42,7 +71,7 @@ module.exports = function (grunt) {
           minifyJS: true,
         },
         files: {
-          "index.html": "src/index.html",
+          "index.html": "build/html/index.html",
         },
       },
     },
@@ -61,8 +90,8 @@ module.exports = function (grunt) {
     },
     watch: {
       scripts: {
-        files: ["src/index.html", "src/js/*.js", "src/js/**/*.js", "src/css/*.css"],
-        tasks: ["concat", "uglify", "cssmin", "htmlmin", "clean"],
+        files: ["src/**/*", "src/**/**/*"],
+        tasks: ["bake", "concat", "less", "postcss", "purgecss", "uglify", "cssmin", "htmlmin", "clean"],
         options: {
           spawn: false,
         },
@@ -78,6 +107,21 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-purgecss");
   grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks("grunt-http-server");
+  grunt.loadNpmTasks("grunt-postcss");
+  grunt.loadNpmTasks("grunt-contrib-less");
+  grunt.loadNpmTasks("grunt-bake");
 
-  grunt.registerTask("default", ["concat", "purgecss", "uglify", "cssmin", "htmlmin", "clean", "http-server", "watch"]);
+  grunt.registerTask("default", [
+    "bake",
+    "concat",
+    "less",
+    "postcss",
+    "purgecss",
+    "uglify",
+    "cssmin",
+    "htmlmin",
+    "clean",
+    "http-server",
+    "watch",
+  ]);
 };
