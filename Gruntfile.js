@@ -2,35 +2,13 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
     concat: {
-      face: {
-        src: ["src/js/face/three.js", "src/js/face/anime.js", "src/js/face/runtime.js", "src/js/face/face.js"],
-        dest: "src/js/faceApp.js",
-      },
-      first: {
-        src: ["src/js/first/jquery.min.js", "src/js/first/index.js"],
-        dest: "src/js/first.js",
-      },
-      end: {
-        src: [
-          "src/js/end/typewriter.js",
-          "src/js/end/writeBio.js",
-          "src/js/end/faceModal.js",
-          "src/js/end/nameAnim.js",
-        ],
-        dest: "src/js/end.js",
+      js: {
+        src: ["src/js/main.js"],
+        dest: "build/js/main.js.concat.tmp",
       },
       css: {
-        src: [
-          "src/css/fonts.css",
-          "src/css/index.css",
-          "src/css/navbar.css",
-          "src/css/sidebars.css",
-          "src/css/name.css",
-          "src/css/bio.css",
-          "src/css/projects.css",
-          "src/css/contact.css",
-        ],
-        dest: "src/css/main.css",
+        src: ["src/css/main.css"],
+        dest: "build/css/main.css.concat.tmp",
       },
     },
     purgecss: {
@@ -39,32 +17,20 @@ module.exports = function (grunt) {
           content: ["src/index.html", "src/js/**/*.js"],
         },
         files: {
-          "src/css/main.css.purged": ["src/css/main.css"],
+          "build/css/main.css.purge.tmp": ["build/css/main.css.concat.tmp"],
         },
       },
     },
     uglify: {
-      face: {
-        src: "src/js/faceApp.js",
-        dest: "src/js/faceApp.min.js",
-      },
-      first: {
-        src: "src/js/first.js",
-        dest: "src/js/first.min.js",
-      },
-      end: {
-        src: "src/js/end.js",
-        dest: "src/js/end.min.js",
-      },
-      matomo: {
-        src: "src/js/omotam.js",
-        dest: "src/js/omotam.min.js",
+      js: {
+        src: "build/js/main.js.concat.tmp",
+        dest: "build/js/main.js",
       },
     },
     cssmin: {
       css: {
-        src: "src/css/main.css.purged",
-        dest: "src/css/main.min.css",
+        src: "build/css/main.css.purge.tmp",
+        dest: "build/css/main.css",
       },
     },
     htmlmin: {
@@ -80,10 +46,23 @@ module.exports = function (grunt) {
         },
       },
     },
+    clean: {
+      tmp: ["build/**/*.tmp"],
+    },
+    "http-server": {
+      dev: {
+        root: ".",
+        port: 8080,
+        host: "0.0.0.0",
+        showDir: true,
+        autoIndex: true,
+        runInBackground: true,
+      },
+    },
     watch: {
       scripts: {
-        files: ["src/index.html", "src/js/*.js", "src/js/end/*.js", "src/css/*.css"],
-        tasks: ["concat", "uglify", "cssmin", "htmlmin"],
+        files: ["src/index.html", "src/js/*.js", "src/js/**/*.js", "src/css/*.css"],
+        tasks: ["concat", "uglify", "cssmin", "htmlmin", "clean"],
         options: {
           spawn: false,
         },
@@ -97,6 +76,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-htmlmin");
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-purgecss");
+  grunt.loadNpmTasks("grunt-contrib-clean");
+  grunt.loadNpmTasks("grunt-http-server");
 
-  grunt.registerTask("default", ["concat", "purgecss", "uglify", "cssmin", "htmlmin", "watch"]);
+  grunt.registerTask("default", ["concat", "purgecss", "uglify", "cssmin", "htmlmin", "clean", "http-server", "watch"]);
 };
