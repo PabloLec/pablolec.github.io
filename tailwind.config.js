@@ -7,7 +7,7 @@ module.exports = {
   plugins: [
     require("tailwind-heropatterns")({
       variants: [],
-      patterns: ["lines-in-motion", "lips", "bank-note", "circuit-board", "signal", "yyy"],
+      patterns: ["lines-in-motion", "lips", "bank-note", "yyy"],
       colors: {
         default: "#EAD2AC",
       },

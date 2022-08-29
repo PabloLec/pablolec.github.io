@@ -25,6 +25,41 @@
 
 body {
   font-family: "Montserrat";
-  background-color: @color-background;
+  background-color: @color-secondary;
   color: @color-text;
+  height: 100vh;
+  width: 100vw;
+}
+
+#main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-hesitate both;
+  z-index: -1;
+  background-color: @color-background;
+}
+
+@keyframes circle-in-hesitate {
+  0% {
+    clip-path: circle(0%);
+  }
+  40% {
+    clip-path: circle(40%);
+  }
+  100% {
+    clip-path: circle(125%);
+  }
 }
