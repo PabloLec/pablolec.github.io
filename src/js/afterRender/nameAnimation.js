@@ -5,4 +5,3 @@ if (window.screen.width > 768) {
 }
 
 document.getElementById("name-hero").className = classList[Math.floor(Math.random() * classList.length)];
-// console.log("name-hero class: " + document.getElementById("name-hero").className);

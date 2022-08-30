@@ -19,13 +19,3 @@ window.onscroll = function () {
   }
   prevScrollpos = currentScrollPos;
 };
-
-$(window).on("load", function () {
-  document.getElementById("navbar").style.top = "0";
-  resetHeaderDelay();
-});
-
-async function resetHeaderDelay() {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  document.getElementById("navbar").style["transition-delay"] = "0s";
-}
