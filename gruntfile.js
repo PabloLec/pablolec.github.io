@@ -1,3 +1,5 @@
+var nodeResolve = require("@rollup/plugin-node-resolve").default;
+
 module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
@@ -6,6 +8,26 @@ module.exports = function (grunt) {
         files: {
           "build/html/index.html": "src/html/index.html",
         },
+      },
+    },
+    rollup: {
+      options: {
+        format: "iife",
+        sourceMap: true,
+        plugins: function () {
+          return [
+            nodeResolve({
+              module: true,
+              jsnext: true,
+              main: true,
+              browser: true,
+            }),
+          ];
+        },
+      },
+      files: {
+        dest: "build/js/anim.js",
+        src: "src/js/anim/anim.js",
       },
     },
     concat: {
@@ -89,7 +111,7 @@ module.exports = function (grunt) {
     watch: {
       scripts: {
         files: ["src/**/*", "src/**/**/*"],
-        tasks: ["bake", "concat", "less", "postcss", "uglify", "cssmin", "htmlmin", "clean"],
+        tasks: ["bake", "rollup", "concat", "less", "postcss", "uglify", "cssmin", "htmlmin", "clean"],
         options: {
           spawn: false,
         },
@@ -107,9 +129,11 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-postcss");
   grunt.loadNpmTasks("grunt-contrib-less");
   grunt.loadNpmTasks("grunt-bake");
+  grunt.loadNpmTasks("grunt-rollup");
 
   grunt.registerTask("default", [
     "bake",
+    "rollup",
     "concat",
     "less",
     "postcss",
