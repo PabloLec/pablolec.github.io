@@ -26,8 +26,8 @@ module.exports = function (grunt) {
         },
       },
       files: {
-        dest: "build/js/anim.js.bundle.tmp",
-        src: "src/js/anim/anim.js",
+        dest: "build/js/3d.js.bundle.tmp",
+        src: "src/js/3d/3d.js",
       },
     },
     concat: {
@@ -76,8 +76,8 @@ module.exports = function (grunt) {
         dest: "build/js/afterRender.js",
       },
       anim: {
-        src: "build/js/anim.js.bundle.tmp",
-        dest: "build/js/anim.js",
+        src: "build/js/3d.js.bundle.tmp",
+        dest: "build/js/3d.js",
       },
     },
     cssmin: {
