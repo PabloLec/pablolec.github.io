@@ -60,7 +60,12 @@ module.exports = function (grunt) {
     postcss: {
       options: {
         map: true,
-        processors: [require("tailwindcss")(), require("autoprefixer")(), require("postcss-combine-media-query")()],
+        processors: [
+          require("tailwindcss")(),
+          require("autoprefixer")(),
+          require("postcss-combine-media-query")(),
+          require("css-mqpacker")(),
+        ],
       },
       dist: {
         src: "build/css/main.css.build.tmp",
