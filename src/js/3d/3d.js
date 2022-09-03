@@ -29,8 +29,10 @@ const loader = new FBXLoader(manager);
 var fbx = "/src/models/me.fbx.gz";
 var isModelLoaded = false;
 var isModalClosedByUser = false;
+var isModelLoadingInitiated = false;
 
 function start() {
+  isModelLoadingInitiated = true;
   loadAll();
   animate();
 }
@@ -139,7 +141,9 @@ function _3dOpen() {
   } else {
     console.log(" 3d.js - _3dOpen - model loading");
     document.getElementById("_3d-loading").style.display = "flex";
-    setTimeout(start, 100);
+    if (!isModelLoadingInitiated) {
+      setTimeout(start, 100);
+    }
   }
 }
 

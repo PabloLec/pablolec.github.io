@@ -66,6 +66,7 @@ let connections;
 let sceneGraph;
 let objectBuffer, path, scope;
 let loadingPromise, loadingResolve, loadingReject;
+let loadingInitialized = false;
 
 class FBXLoader extends Loader {
   constructor(manager) {
@@ -105,6 +106,9 @@ class FBXLoader extends Loader {
   }
 
   load(onLoad) {
+    if (loadingInitialized) return;
+    loadingInitialized = true;
+    console.log("Add promise to loading manager");
     loadingPromise
       .then(function () {
         let inflatedBuffer = pako.inflate(objectBuffer).buffer;
