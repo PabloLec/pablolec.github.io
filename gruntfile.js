@@ -75,7 +75,7 @@ module.exports = function (grunt) {
         src: "build/js/afterRender.js.concat.tmp",
         dest: "build/js/afterRender.js",
       },
-      _3d: {
+      threeD: {
         src: "build/js/3d.js.bundle.tmp",
         dest: "build/js/3d.js",
       },
