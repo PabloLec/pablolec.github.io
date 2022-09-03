@@ -14,6 +14,7 @@ manager.onError = function (url) {
 };
 const loader = new FBXLoader(manager);
 var isModelLoaded = false;
+var isModalClosedByUser = false;
 
 function start() {
   loadAll();
@@ -71,7 +72,9 @@ function loadAll() {
 }
 
 function loadModel() {
-  loader.load("/src/models/me.fbx", function (object) {
+  let fbx = "/src/models/me.fbx";
+
+  loader.load(fbx, function (object) {
     mixer = new THREE.AnimationMixer(object);
 
     const action = mixer.clipAction(object.animations[0]);
@@ -107,25 +110,32 @@ function animate() {
 
 // State management
 
-document.getElementById("_3d-close").addEventListener("click", function (e) {
-  e.stopPropagation();
-  e.preventDefault();
-  _3dClose();
-});
+var _3dCloseElements = document.getElementsByClassName("_3d-close");
+for (var i = 0; i < _3dCloseElements.length; i++) {
+  _3dCloseElements[i].addEventListener("click", function (e) {
+    isModalClosedByUser = true;
+    e.stopPropagation();
+    e.preventDefault();
+    _3dClose();
+  });
+}
 
 document.getElementById("_3d-open").addEventListener("click", function (e) {
+  isModalClosedByUser = false;
   e.stopPropagation();
   e.preventDefault();
   _3dOpen();
 });
 
 function _3dOpen() {
+  if (isModalClosedByUser) return;
+
   document.getElementsByTagName("body")[0].style.overflow = "hidden";
   if (isModelLoaded) {
     document.getElementById("_3d-loading").style.display = "none";
     document.getElementById("_3d-container").style.display = "block";
   } else {
-    document.getElementById("_3d-loading").style.display = "block";
+    document.getElementById("_3d-loading").style.display = "flex";
     start();
   }
 }
@@ -133,4 +143,5 @@ function _3dOpen() {
 function _3dClose() {
   document.getElementsByTagName("body")[0].style.overflow = "auto";
   document.getElementById("_3d-container").style.display = "none";
+  document.getElementById("_3d-loading").style.display = "none";
 }

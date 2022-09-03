@@ -11,6 +11,14 @@
   display: none;
 }
 
+._3d-close {
+  position: fixed;
+  z-index: 101;
+  top: 2%;
+  right: 2%;
+  color: #fff;
+}
+
 #_3d-loading {
   position: fixed;
   top: 0;
@@ -22,12 +30,68 @@
   backdrop-filter: blur(10px);
   background-color: fade(@color-secondary, 5);
   display: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
 }
 
-#_3d-close {
-  position: fixed;
-  z-index: 101;
-  top: 2%;
-  right: 2%;
-  color: #fff;
+#_3d-loader {
+  width: 48px;
+  height: 48px;
+  animation: rotate 2s linear infinite;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: center;
+}
+#_3d-loader:before,
+#_3d-loader:after {
+  content: "";
+  flex: 1;
+  background: #e5e7eb;
+  animation: mvx 0.5s infinite linear alternate;
+}
+#_3d-loader:before {
+  background: @color-primary;
+  animation-name: mvrx;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes mvx {
+  0%,
+  40% {
+    transform: translateX(0px);
+  }
+  20%,
+  60% {
+    transform: translateX(8px);
+  }
+  100% {
+    transform: translateX(15px);
+  }
+}
+@keyframes mvrx {
+  0%,
+  40% {
+    transform: translateX(0px);
+  }
+  20%,
+  60% {
+    transform: translateX(-8px);
+  }
+  100% {
+    transform: translateX(-15px);
+  }
+}
+
+#_3d-loader-text {
+  display: block;
+  order: 1;
+  flex: 0 1 auto;
+  align-self: center;
 }
