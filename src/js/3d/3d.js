@@ -139,7 +139,7 @@ function _3dOpen() {
   } else {
     console.log(" 3d.js - _3dOpen - model loading");
     document.getElementById("_3d-loading").style.display = "flex";
-    setTimeout(start, 50);
+    setTimeout(start, 100);
   }
 }
 
