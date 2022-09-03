@@ -14,6 +14,7 @@ module.exports = function (grunt) {
       options: {
         format: "iife",
         sourceMap: true,
+        map: true,
         plugins: function () {
           return [
             nodeResolve({
@@ -65,6 +66,7 @@ module.exports = function (grunt) {
           require("autoprefixer")(),
           require("postcss-combine-media-query")(),
           require("css-mqpacker")(),
+          cssnano,
         ],
       },
       dist: {
