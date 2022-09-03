@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { FBXLoader } from "./CustomFBXLoader.js";
+
 var camera, scene, renderer, mixer, me;
 const clock = new THREE.Clock();
 const manager = new THREE.LoadingManager();
