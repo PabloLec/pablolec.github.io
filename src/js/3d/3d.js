@@ -1,11 +1,24 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
-let camera, scene, renderer, mixer;
-
+import { FBXLoader } from "./CustomFBXLoader.js";
+var camera, scene, renderer, mixer, me;
 const clock = new THREE.Clock();
 const manager = new THREE.LoadingManager();
 manager.onLoad = function () {
+  console.log("onLoad");
+  mixer = new THREE.AnimationMixer(me);
+  const action = mixer.clipAction(me.animations[0]);
+  action.play();
+
+  me.traverse(function (child) {
+    if (child.isMesh) {
+      child.castShadow = true;
+      child.receiveShadow = true;
+      child.frustumCulled = false;
+    }
+  });
+
+  scene.add(me);
   isModelLoaded = true;
   _3dOpen();
 };
@@ -13,10 +26,12 @@ manager.onError = function (url) {
   console.log("There was an error loading " + url);
 };
 const loader = new FBXLoader(manager);
+var fbx = "/src/models/me.fbx.gz";
 var isModelLoaded = false;
 var isModalClosedByUser = false;
 
 function start() {
+  console.log("start");
   loadAll();
   animate();
 }
@@ -54,7 +69,7 @@ function loadAll() {
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.target.set(0, 0, 100);
-  controls.minDistance = 177;
+  controls.minDistance = 25;
   controls.maxDistance = 1850;
   controls.update();
 
@@ -72,22 +87,9 @@ function loadAll() {
 }
 
 function loadModel() {
-  let fbx = "/src/models/me.fbx";
-
+  console.log("load");
   loader.load(fbx, function (object) {
-    mixer = new THREE.AnimationMixer(object);
-
-    const action = mixer.clipAction(object.animations[0]);
-    action.play();
-
-    object.traverse(function (child) {
-      if (child.isMesh) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-      }
-    });
-
-    scene.add(object);
+    me = object;
   });
 }
 
@@ -132,11 +134,13 @@ function _3dOpen() {
 
   document.getElementsByTagName("body")[0].style.overflow = "hidden";
   if (isModelLoaded) {
+    console.log("loaded");
     document.getElementById("_3d-loading").style.display = "none";
     document.getElementById("_3d-container").style.display = "block";
   } else {
+    console.log("loading");
     document.getElementById("_3d-loading").style.display = "flex";
-    start();
+    setTimeout(start, 50);
   }
 }
 
@@ -145,3 +149,5 @@ function _3dClose() {
   document.getElementById("_3d-container").style.display = "none";
   document.getElementById("_3d-loading").style.display = "none";
 }
+
+loader.preload(fbx);
