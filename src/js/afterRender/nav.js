@@ -20,3 +20,8 @@ window.onscroll = function () {
   }
   prevScrollpos = currentScrollPos;
 };
+
+function onNavClick() {
+  document.getElementById("navbar").style.top = "-150px";
+  document.getElementById("mobile-menu").style.display = "none";
+}

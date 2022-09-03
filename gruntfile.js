@@ -66,7 +66,6 @@ module.exports = function (grunt) {
           require("autoprefixer")(),
           require("postcss-combine-media-query")(),
           require("css-mqpacker")(),
-          cssnano,
         ],
       },
       dist: {
