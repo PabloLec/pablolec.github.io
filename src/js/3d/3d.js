@@ -5,7 +5,6 @@ var camera, scene, renderer, mixer, me;
 const clock = new THREE.Clock();
 const manager = new THREE.LoadingManager();
 manager.onLoad = function () {
-  console.log("onLoad");
   mixer = new THREE.AnimationMixer(me);
   const action = mixer.clipAction(me.animations[0]);
   action.play();
@@ -31,7 +30,6 @@ var isModelLoaded = false;
 var isModalClosedByUser = false;
 
 function start() {
-  console.log("start");
   loadAll();
   animate();
 }
@@ -87,8 +85,8 @@ function loadAll() {
 }
 
 function loadModel() {
-  console.log("load");
-  loader.load(fbx, function (object) {
+  console.log(" 3d.js - loadModel");
+  loader.load(function (object) {
     me = object;
   });
 }
@@ -134,11 +132,11 @@ function _3dOpen() {
 
   document.getElementsByTagName("body")[0].style.overflow = "hidden";
   if (isModelLoaded) {
-    console.log("loaded");
+    console.log(" 3d.js - _3dOpen - model loaded");
     document.getElementById("_3d-loading").style.display = "none";
     document.getElementById("_3d-container").style.display = "block";
   } else {
-    console.log("loading");
+    console.log(" 3d.js - _3dOpen - model loading");
     document.getElementById("_3d-loading").style.display = "flex";
     setTimeout(start, 50);
   }

@@ -40,6 +40,7 @@ import {
   Vector4,
   VectorKeyframeTrack,
   sRGBEncoding,
+  LoadingManager,
 } from "three";
 import * as fflate from "three/examples/jsm/libs/fflate.module.js";
 import { NURBSCurve } from "three/examples/jsm/curves/NURBSCurve.js";
@@ -63,9 +64,8 @@ import "pako/dist/pako_inflate.min.js";
 let fbxTree;
 let connections;
 let sceneGraph;
-let isObjectLoaded = false;
-let isObjectInError = false;
 let objectBuffer, path, scope;
+let loadingPromise, loadingResolve, loadingReject;
 
 class FBXLoader extends Loader {
   constructor(manager) {
@@ -73,44 +73,46 @@ class FBXLoader extends Loader {
   }
 
   preload(url) {
-    console.log("FBXLoader.preload");
+    console.log(" FBXLoader - start file preloading");
     scope = this;
 
     path = scope.path === "" ? LoaderUtils.extractUrlBase(url) : scope.path;
+    const manager = new LoadingManager();
 
-    const loader = new FileLoader();
+    const loader = new FileLoader(manager);
     loader.setPath(scope.path);
     loader.setResponseType("arraybuffer");
     loader.setRequestHeader(scope.requestHeader);
     loader.setWithCredentials(scope.withCredentials);
 
-    loader.load(
-      url,
-      function (buffer) {
-        objectBuffer = buffer;
-        try {
-          isObjectLoaded = true;
-        } catch (e) {
-          console.error(e);
-          scope.manager.itemError(url);
-        }
-      },
-      null,
-      null
-    );
+    loadingPromise = new Promise(function (resolve, reject) {
+      loader.load(
+        url,
+        function (buffer) {
+          objectBuffer = buffer;
+          console.log(" FBXLoader - file preloaded");
+        },
+        null,
+        null
+      );
+
+      loadingResolve = resolve;
+      loadingReject = reject;
+    });
+
+    manager.onLoad = loadingResolve;
+    manager.onError = loadingReject;
   }
 
-  waitForPreload() {
-    if (isObjectLoaded) return;
-    setTimeout(scope.waitForPreload, 50);
-  }
-
-  load(url, onLoad, onProgress, onError) {
-    console.log("FBXLoader.load");
-    scope.waitForPreload();
-    console.log("FBXLoader.load after preload");
-    let inflatedBuffer = pako.inflate(objectBuffer).buffer;
-    onLoad(scope.parse(inflatedBuffer, path));
+  load(onLoad) {
+    loadingPromise
+      .then(function () {
+        let inflatedBuffer = pako.inflate(objectBuffer).buffer;
+        onLoad(scope.parse(inflatedBuffer, path));
+      })
+      .catch(function () {
+        throw new Error("FBXLoader: Error loading FBX");
+      });
   }
 
   parse(FBXBuffer, path) {
@@ -129,8 +131,6 @@ class FBXLoader extends Loader {
 
       fbxTree = new TextParser().parse(FBXText);
     }
-
-    // console.log( fbxTree );
 
     const textureLoader = new TextureLoader(this.manager)
       .setPath(this.resourcePath || path)
