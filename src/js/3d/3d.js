@@ -13,10 +13,7 @@ const manager = new THREE.LoadingManager();
 manager.onLoad = function () {
   mixer = new THREE.AnimationMixer(me);
   action = mixer.clipAction(me.animations[0]);
-  if (!isModalClosedByUser) {
-    action.play();
-  }
-
+  action.play();
   me.traverse(function (child) {
     if (child.isMesh) {
       child.castShadow = true;
@@ -136,10 +133,6 @@ document.getElementById("_3d-open").addEventListener("click", function (e) {
 function _3dOpen() {
   if (isModalClosedByUser) return;
 
-  if (action != null) {
-    action.play();
-  }
-
   document.getElementsByTagName("body")[0].style.overflow = "hidden";
   if (isModelLoaded) {
     if (animationFrame == null) {
@@ -161,9 +154,6 @@ function _3dClose() {
   document.getElementsByTagName("body")[0].style.overflow = "auto";
   document.getElementById("_3d-container").style.display = "none";
   document.getElementById("_3d-loading").style.display = "none";
-  if (action != null) {
-    action.stop();
-  }
   if (animationFrame != null) {
     cancelAnimationFrame(animationFrame);
     animationFrame = null;
