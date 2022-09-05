@@ -3,12 +3,19 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { FBXLoader } from "./CustomFBXLoader.js";
 
 var camera, scene, renderer, mixer, me, action;
+var fbx = "/src/models/me.fbx.gz";
+var isModelLoaded = false;
+var isModalClosedByUser = false;
+var isModelLoadingInitiated = false;
 const clock = new THREE.Clock();
 const manager = new THREE.LoadingManager();
+
 manager.onLoad = function () {
   mixer = new THREE.AnimationMixer(me);
   action = mixer.clipAction(me.animations[0]);
-  action.play();
+  if (!isModalClosedByUser) {
+    action.play();
+  }
 
   me.traverse(function (child) {
     if (child.isMesh) {
@@ -26,10 +33,6 @@ manager.onError = function (url) {
   console.log("There was an error loading " + url);
 };
 const loader = new FBXLoader(manager);
-var fbx = "/src/models/me.fbx.gz";
-var isModelLoaded = false;
-var isModalClosedByUser = false;
-var isModelLoadingInitiated = false;
 
 function start() {
   isModelLoadingInitiated = true;
