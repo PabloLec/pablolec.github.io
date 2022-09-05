@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { FBXLoader } from "./CustomFBXLoader.js";
 
-var camera, scene, renderer, mixer, me, action;
+var camera, scene, renderer, mixer, me, action, animationFrame;
 var fbx = "/src/models/me.fbx.gz";
 var isModelLoaded = false;
 var isModalClosedByUser = false;
@@ -105,7 +105,7 @@ function onWindowResize() {
 }
 
 function animate() {
-  requestAnimationFrame(animate);
+  animationFrame = requestAnimationFrame(animate);
 
   const delta = clock.getDelta();
 
@@ -142,6 +142,9 @@ function _3dOpen() {
 
   document.getElementsByTagName("body")[0].style.overflow = "hidden";
   if (isModelLoaded) {
+    if (animationFrame == null) {
+      animate();
+    }
     console.log(" 3d.js - _3dOpen - model loaded");
     document.getElementById("_3d-loading").style.display = "none";
     document.getElementById("_3d-container").style.display = "block";
@@ -160,6 +163,10 @@ function _3dClose() {
   document.getElementById("_3d-loading").style.display = "none";
   if (action != null) {
     action.stop();
+  }
+  if (animationFrame != null) {
+    cancelAnimationFrame(animationFrame);
+    animationFrame = null;
   }
 }
 
