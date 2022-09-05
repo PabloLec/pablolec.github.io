@@ -2,12 +2,12 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { FBXLoader } from "./CustomFBXLoader.js";
 
-var camera, scene, renderer, mixer, me;
+var camera, scene, renderer, mixer, me, action;
 const clock = new THREE.Clock();
 const manager = new THREE.LoadingManager();
 manager.onLoad = function () {
   mixer = new THREE.AnimationMixer(me);
-  const action = mixer.clipAction(me.animations[0]);
+  action = mixer.clipAction(me.animations[0]);
   action.play();
 
   me.traverse(function (child) {
@@ -133,6 +133,10 @@ document.getElementById("_3d-open").addEventListener("click", function (e) {
 function _3dOpen() {
   if (isModalClosedByUser) return;
 
+  if (action != null) {
+    action.play();
+  }
+
   document.getElementsByTagName("body")[0].style.overflow = "hidden";
   if (isModelLoaded) {
     console.log(" 3d.js - _3dOpen - model loaded");
@@ -151,6 +155,9 @@ function _3dClose() {
   document.getElementsByTagName("body")[0].style.overflow = "auto";
   document.getElementById("_3d-container").style.display = "none";
   document.getElementById("_3d-loading").style.display = "none";
+  if (action != null) {
+    action.stop();
+  }
 }
 
 loader.preload(fbx);
